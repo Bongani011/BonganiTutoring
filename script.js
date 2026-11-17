@@ -1,335 +1,588 @@
-"use strict";
-
-
 /* =========================================================
-   BONGANI TUTORING
-   JAVASCRIPT
+   BONGX031 TUTORING
+   PROFESSIONAL WEBSITE JAVASCRIPT
 ========================================================= */
 
 
 /* =========================================================
-   MOBILE MENU
+   1. WAIT FOR WEBSITE TO LOAD
 ========================================================= */
 
-const menuButton = document.getElementById("menuButton");
-const navMenu = document.getElementById("navMenu");
+document.addEventListener("DOMContentLoaded", function () {
 
+    /* -----------------------------------------------------
+       ELEMENTS
+    ----------------------------------------------------- */
 
-if (menuButton && navMenu) {
-
-    menuButton.addEventListener("click", function () {
-
-        navMenu.classList.toggle("active");
-
-    });
-
-
+    const header = document.getElementById("header");
+    const menuButton = document.getElementById("menuButton");
+    const navMenu = document.getElementById("navMenu");
     const navLinks = document.querySelectorAll("#navMenu a");
+    const bookingForm = document.getElementById("bookingForm");
+    const dateInput = document.getElementById("date");
+    const backToTop = document.getElementById("backToTop");
+    const yearElement = document.getElementById("year");
+    const profileImage = document.getElementById("profileImage");
+    const imageFallback = document.getElementById("imageFallback");
+
+
+    /* =====================================================
+       2. CURRENT YEAR
+    ===================================================== */
+
+    if (yearElement) {
+
+        yearElement.textContent = new Date().getFullYear();
+
+    }
+
+
+    /* =====================================================
+       3. MOBILE MENU
+    ===================================================== */
+
+    function openMenu() {
+
+        navMenu.classList.add("active");
+
+        menuButton.classList.add("active");
+
+        menuButton.setAttribute("aria-expanded", "true");
+
+        menuButton.setAttribute("aria-label", "Close navigation menu");
+
+    }
+
+
+    function closeMenu() {
+
+        navMenu.classList.remove("active");
+
+        menuButton.classList.remove("active");
+
+        menuButton.setAttribute("aria-expanded", "false");
+
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+
+    }
+
+
+    function toggleMenu() {
+
+        if (navMenu.classList.contains("active")) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
+
+    }
+
+
+    if (menuButton && navMenu) {
+
+        menuButton.addEventListener("click", toggleMenu);
+
+    }
+
+
+    /* =====================================================
+       4. CLOSE MENU WHEN LINK IS CLICKED
+    ===================================================== */
 
     navLinks.forEach(function (link) {
 
         link.addEventListener("click", function () {
 
-            navMenu.classList.remove("active");
+            closeMenu();
 
         });
 
     });
 
 
+    /* =====================================================
+       5. CLOSE MENU WHEN CLICKING OUTSIDE
+    ===================================================== */
+
     document.addEventListener("click", function (event) {
+
+        if (!navMenu || !menuButton) {
+            return;
+        }
+
 
         const clickedInsideMenu =
             navMenu.contains(event.target);
 
-        const clickedButton =
+        const clickedMenuButton =
             menuButton.contains(event.target);
 
-        if (!clickedInsideMenu && !clickedButton) {
 
-            navMenu.classList.remove("active");
+        if (
+            !clickedInsideMenu &&
+            !clickedMenuButton &&
+            navMenu.classList.contains("active")
+        ) {
+
+            closeMenu();
 
         }
 
     });
 
+
+    /* =====================================================
+       6. CLOSE MOBILE MENU WITH ESCAPE
+    ===================================================== */
 
     document.addEventListener("keydown", function (event) {
 
-        if (event.key === "Escape") {
+        if (
+            event.key === "Escape" &&
+            navMenu.classList.contains("active")
+        ) {
 
-            navMenu.classList.remove("active");
+            closeMenu();
+
+            menuButton.focus();
 
         }
 
     });
 
-}
+
+    /* =====================================================
+       7. HEADER SCROLL EFFECT
+    ===================================================== */
+
+    function updateHeader() {
+
+        if (!header) {
+            return;
+        }
 
 
-/* =========================================================
-   NAVBAR SCROLL EFFECT
-========================================================= */
+        if (window.scrollY > 40) {
 
-const navbar = document.getElementById("navbar");
+            header.classList.add("scrolled");
 
+        } else {
 
-function updateNavbar() {
+            header.classList.remove("scrolled");
 
-    if (!navbar) {
-        return;
-    }
-
-    if (window.scrollY > 50) {
-
-        navbar.classList.add("scrolled");
-
-    } else {
-
-        navbar.classList.remove("scrolled");
+        }
 
     }
 
-}
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
 
 
-window.addEventListener(
-    "scroll",
-    updateNavbar,
-    { passive: true }
-);
-
-updateNavbar();
+    updateHeader();
 
 
-/* =========================================================
-   CURRENT YEAR
-========================================================= */
+    /* =====================================================
+       8. SMOOTH SCROLLING
+    ===================================================== */
 
-const yearElement =
-    document.getElementById("year");
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
+        link.addEventListener("click", function (event) {
 
-if (yearElement) {
+            const targetID =
+                this.getAttribute("href");
 
-    yearElement.textContent =
-        new Date().getFullYear();
-
-}
-
-
-/* =========================================================
-   BOOKING DATE
-========================================================= */
-
-const dateInput =
-    document.getElementById("date");
-
-
-if (dateInput) {
-
-    const today =
-        new Date();
-
-    const year =
-        today.getFullYear();
-
-    const month =
-        String(today.getMonth() + 1)
-            .padStart(2, "0");
-
-    const day =
-        String(today.getDate())
-            .padStart(2, "0");
-
-    dateInput.min =
-        `${year}-${month}-${day}`;
-
-}
-
-
-/* =========================================================
-   WHATSAPP BOOKING
-========================================================= */
-
-const bookingForm =
-    document.getElementById("bookingForm");
-
-const formMessage =
-    document.getElementById("formMessage");
-
-const submitButton =
-    document.getElementById("submitButton");
-
-
-/*
-   Bongani Tutoring WhatsApp number
-
-   0786701301
-   South Africa international format:
-   27786701301
-*/
-
-const whatsappNumber =
-    "27786701301";
-
-
-if (bookingForm) {
-
-    bookingForm.addEventListener(
-        "submit",
-        function (event) {
-
-            event.preventDefault();
-
-
-            /* Collect form values */
-
-            const name =
-                document.getElementById("name").value.trim();
-
-            const level =
-                document.getElementById("level").value;
-
-            const subject =
-                document.getElementById("subject").value;
-
-            const module =
-                document.getElementById("module").value.trim();
-
-            const date =
-                document.getElementById("date").value;
-
-            const session =
-                document.getElementById("session").value;
-
-            const message =
-                document.getElementById("message").value.trim();
-
-
-            /* Basic validation */
 
             if (
-                !name ||
-                !level ||
-                !subject ||
-                !module ||
-                !date ||
-                !session
+                !targetID ||
+                targetID === "#"
             ) {
-
-                formMessage.textContent =
-                    "Please complete all required fields.";
-
-                formMessage.style.color =
-                    "#e31b23";
 
                 return;
 
             }
 
 
-            /* Convert date */
+            const target =
+                document.querySelector(targetID);
 
-            let formattedDate =
-                date;
 
-            if (date) {
+            if (!target) {
+                return;
+            }
 
-                const selectedDate =
-                    new Date(date + "T00:00:00");
 
-                formattedDate =
-                    selectedDate.toLocaleDateString(
-                        "en-ZA",
-                        {
-                            day: "2-digit",
-                            month: "long",
-                            year: "numeric"
-                        }
+            event.preventDefault();
+
+
+            const headerHeight =
+                header
+                    ? header.offsetHeight
+                    : 0;
+
+
+            const targetPosition =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight;
+
+
+            window.scrollTo({
+
+                top: targetPosition,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    });
+
+
+    /* =====================================================
+       9. ACTIVE NAVIGATION LINK
+    ===================================================== */
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+
+    function updateActiveNavigation() {
+
+        let currentSection = "";
+
+
+        sections.forEach(function (section) {
+
+            const sectionTop =
+                section.offsetTop - 180;
+
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
+
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionBottom
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+            const href =
+                link.getAttribute("href");
+
+
+            if (
+                href === "#" + currentSection
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive: true }
+    );
+
+
+    updateActiveNavigation();
+
+
+    /* =====================================================
+       10. PROFILE IMAGE FALLBACK
+    ===================================================== */
+
+    if (profileImage) {
+
+        profileImage.addEventListener("error", function () {
+
+            profileImage.style.display = "none";
+
+
+            if (imageFallback) {
+
+                imageFallback.style.display = "flex";
+
+            }
+
+        });
+
+    }
+
+
+    /* =====================================================
+       11. BOOKING DATE
+    ===================================================== */
+
+    if (dateInput) {
+
+        const today =
+            new Date();
+
+
+        const year =
+            today.getFullYear();
+
+
+        const month =
+            String(
+                today.getMonth() + 1
+            ).padStart(2, "0");
+
+
+        const day =
+            String(
+                today.getDate()
+            ).padStart(2, "0");
+
+
+        const formattedDate =
+            `${year}-${month}-${day}`;
+
+
+        dateInput.min =
+            formattedDate;
+
+    }
+
+
+    /* =====================================================
+       12. BOOKING FORM
+    ===================================================== */
+
+    if (bookingForm) {
+
+        bookingForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* -----------------------------------------
+                   GET FORM VALUES
+                ----------------------------------------- */
+
+                const name =
+                    document.getElementById("name")
+                        ?.value.trim();
+
+
+                const level =
+                    document.getElementById("level")
+                        ?.value.trim();
+
+
+                const subject =
+                    document.getElementById("subject")
+                        ?.value.trim();
+
+
+                const topic =
+                    document.getElementById("topic")
+                        ?.value.trim();
+
+
+                const date =
+                    document.getElementById("date")
+                        ?.value;
+
+
+                const time =
+                    document.getElementById("time")
+                        ?.value;
+
+
+                const message =
+                    document.getElementById("message")
+                        ?.value.trim();
+
+
+                /* -----------------------------------------
+                   VALIDATION
+                ----------------------------------------- */
+
+                if (!name) {
+
+                    showNotification(
+                        "Please enter your full name.",
+                        "error"
                     );
 
-            }
+                    document.getElementById("name").focus();
+
+                    return;
+
+                }
 
 
-            /* Create WhatsApp message */
+                if (!level) {
 
-            let whatsappMessage =
-                "Hello Bongani, I would like to book a tutoring session.%0A%0A";
+                    showNotification(
+                        "Please select your grade or level.",
+                        "error"
+                    );
 
+                    document.getElementById("level").focus();
 
-            whatsappMessage +=
-                "Name: " +
-                encodeURIComponent(name) +
-                "%0A";
+                    return;
 
-            whatsappMessage +=
-                "Grade/Level: " +
-                encodeURIComponent(level) +
-                "%0A";
-
-            whatsappMessage +=
-                "Subject: " +
-                encodeURIComponent(subject) +
-                "%0A";
-
-            whatsappMessage +=
-                "Topic/Module: " +
-                encodeURIComponent(module) +
-                "%0A";
-
-            whatsappMessage +=
-                "Preferred Date: " +
-                encodeURIComponent(formattedDate) +
-                "%0A";
-
-            whatsappMessage +=
-                "Preferred Time: " +
-                encodeURIComponent(session) +
-                "%0A";
+                }
 
 
-            if (message) {
+                if (!subject) {
 
-                whatsappMessage +=
-                    "Additional Message: " +
-                    encodeURIComponent(message) +
-                    "%0A";
+                    showNotification(
+                        "Please select a subject or service.",
+                        "error"
+                    );
 
-            }
+                    document.getElementById("subject").focus();
 
+                    return;
 
-            whatsappMessage +=
-                "%0AI would like to receive confirmation of the session.";
-
-
-            /* WhatsApp URL */
-
-            const whatsappURL =
-                "https://wa.me/" +
-                whatsappNumber +
-                "?text=" +
-                whatsappMessage;
+                }
 
 
-            /* Button state */
+                if (!date) {
 
-            submitButton.disabled = true;
+                    showNotification(
+                        "Please select your preferred date.",
+                        "error"
+                    );
 
-            submitButton.textContent =
-                "Opening WhatsApp...";
+                    document.getElementById("date").focus();
+
+                    return;
+
+                }
 
 
-            formMessage.textContent =
-                "Your booking request is being prepared for WhatsApp.";
+                if (!time) {
 
-            formMessage.style.color =
-                "#1264e8";
+                    showNotification(
+                        "Please select your preferred time.",
+                        "error"
+                    );
+
+                    document.getElementById("time").focus();
+
+                    return;
+
+                }
 
 
-            /* Open WhatsApp */
+                /* -----------------------------------------
+                   FORMAT DATE
+                ----------------------------------------- */
 
-            setTimeout(function () {
+                const formattedDate =
+                    formatDate(date);
+
+
+                /* -----------------------------------------
+                   CREATE WHATSAPP MESSAGE
+                ----------------------------------------- */
+
+                let whatsappMessage =
+
+`Hello BONGX031 👋
+
+I would like to make a booking.
+
+━━━━━━━━━━━━━━━━━━━━
+
+STUDENT DETAILS
+
+Name: ${name}
+
+Grade / Level: ${level}
+
+Subject / Service: ${subject}
+
+Topic / Module: ${topic || "Not specified"}
+
+Preferred Date: ${formattedDate}
+
+Preferred Time: ${time}
+
+Additional Message:
+${message || "No additional message"}
+
+━━━━━━━━━━━━━━━━━━━━
+
+I would like to confirm availability and receive further information.
+
+Thank you.`;
+
+
+
+                /* -----------------------------------------
+                   WHATSAPP URL
+                ----------------------------------------- */
+
+                const phoneNumber =
+                    "27786701301";
+
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    phoneNumber +
+                    "?text=" +
+                    encodeURIComponent(
+                        whatsappMessage
+                    );
+
+
+                /* -----------------------------------------
+                   DISABLE BUTTON
+                ----------------------------------------- */
+
+                const submitButton =
+                    bookingForm.querySelector(
+                        'button[type="submit"]'
+                    );
+
+
+                if (submitButton) {
+
+                    submitButton.disabled = true;
+
+                    submitButton.textContent =
+                        "Opening WhatsApp...";
+
+                }
+
+
+                /* -----------------------------------------
+                   OPEN WHATSAPP
+                ----------------------------------------- */
 
                 window.open(
                     whatsappURL,
@@ -337,335 +590,474 @@ if (bookingForm) {
                 );
 
 
-                submitButton.disabled =
-                    false;
+                /* -----------------------------------------
+                   SUCCESS MESSAGE
+                ----------------------------------------- */
 
-                submitButton.textContent =
-                    "Send Booking Request on WhatsApp";
+                showNotification(
+                    "Your booking request has been prepared for WhatsApp.",
+                    "success"
+                );
 
-            }, 600);
+
+                /* -----------------------------------------
+                   RESET FORM
+                ----------------------------------------- */
+
+                setTimeout(function () {
+
+                    bookingForm.reset();
+
+
+                    if (submitButton) {
+
+                        submitButton.disabled = false;
+
+                        submitButton.textContent =
+                            "Send Booking Request on WhatsApp";
+
+                    }
+
+                }, 1500);
+
+            });
+
+    }
+
+
+    /* =====================================================
+       13. FORMAT DATE
+    ===================================================== */
+
+    function formatDate(dateString) {
+
+        if (!dateString) {
+
+            return "Not specified";
 
         }
-    );
-
-}
 
 
-/* =========================================================
-   FORM FOCUS EFFECTS
-========================================================= */
-
-const formInputs =
-    document.querySelectorAll(
-        ".booking-form input, .booking-form select, .booking-form textarea"
-    );
+        const date =
+            new Date(
+                dateString + "T00:00:00"
+            );
 
 
-formInputs.forEach(function (input) {
+        return date.toLocaleDateString(
+            "en-ZA",
+            {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
+            }
+        );
 
-    input.addEventListener(
-        "focus",
-        function () {
+    }
 
-            this.classList.add("focused");
+
+    /* =====================================================
+       14. NOTIFICATION SYSTEM
+    ===================================================== */
+
+    function showNotification(
+        message,
+        type = "success"
+    ) {
+
+        const existing =
+            document.querySelector(
+                ".site-notification"
+            );
+
+
+        if (existing) {
+
+            existing.remove();
 
         }
-    );
 
 
-    input.addEventListener(
-        "blur",
-        function () {
+        const notification =
+            document.createElement("div");
 
-            this.classList.remove("focused");
+
+        notification.className =
+            "site-notification";
+
+
+        if (type === "error") {
+
+            notification.classList.add(
+                "notification-error"
+            );
+
+        } else {
+
+            notification.classList.add(
+                "notification-success"
+            );
 
         }
-    );
-
-});
 
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+        notification.innerHTML = `
 
-const revealElements =
-    document.querySelectorAll(
-        ".subject-card, .price-card, .process-card, .contact-card, .platform-card, .info-card"
-    );
+            <div class="notification-icon">
+                ${type === "error" ? "!" : "✓"}
+            </div>
+
+            <div class="notification-message">
+                ${message}
+            </div>
+
+            <button
+                class="notification-close"
+                aria-label="Close notification"
+            >
+                ×
+            </button>
+
+        `;
 
 
-revealElements.forEach(function (element) {
-
-    element.classList.add("reveal");
-
-});
+        document.body.appendChild(
+            notification
+        );
 
 
-const revealObserver =
-    new IntersectionObserver(
-        function (entries) {
+        requestAnimationFrame(function () {
 
-            entries.forEach(function (entry) {
+            notification.classList.add(
+                "show"
+            );
 
-                if (entry.isIntersecting) {
+        });
 
-                    entry.target.classList.add(
-                        "reveal-visible"
-                    );
 
-                    revealObserver.unobserve(
-                        entry.target
+        const closeButton =
+            notification.querySelector(
+                ".notification-close"
+            );
+
+
+        if (closeButton) {
+
+            closeButton.addEventListener(
+                "click",
+                function () {
+
+                    removeNotification(
+                        notification
                     );
 
                 }
-
-            });
-
-        },
-        {
-            threshold: 0.10
-        }
-    );
-
-
-revealElements.forEach(function (element) {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const backToTop =
-    document.getElementById("backToTop");
-
-
-function updateBackToTop() {
-
-    if (!backToTop) {
-        return;
-    }
-
-    if (window.scrollY > 500) {
-
-        backToTop.classList.add("show");
-
-    } else {
-
-        backToTop.classList.remove("show");
-
-    }
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    updateBackToTop,
-    { passive: true }
-);
-
-
-if (backToTop) {
-
-    backToTop.addEventListener(
-        "click",
-        function () {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            );
 
         }
-    );
-
-}
 
 
-updateBackToTop();
+        setTimeout(function () {
 
+            removeNotification(
+                notification
+            );
 
-/* =========================================================
-   YOUTUBE LINK
-========================================================= */
-
-
-/*
-   IMPORTANT:
-
-   Replace the URL below with your actual
-   YouTube channel URL.
-
-   Example:
-
-   const youtubeURL =
-       "https://www.youtube.com/@YourChannel";
-*/
-
-const youtubeURL = "#";
-
-
-const youtubeLink =
-    document.getElementById("youtubeLink");
-
-const youtubeContactLink =
-    document.getElementById(
-        "youtubeContactLink"
-    );
-
-
-if (youtubeURL !== "#") {
-
-    if (youtubeLink) {
-
-        youtubeLink.href =
-            youtubeURL;
-
-        youtubeLink.target =
-            "_blank";
-
-        youtubeLink.rel =
-            "noopener noreferrer";
+        }, 5000);
 
     }
 
 
-    if (youtubeContactLink) {
+    /* =====================================================
+       15. REMOVE NOTIFICATION
+    ===================================================== */
 
-        youtubeContactLink.href =
-            youtubeURL;
+    function removeNotification(
+        notification
+    ) {
 
-        youtubeContactLink.target =
-            "_blank";
+        if (!notification) {
+            return;
+        }
 
-        youtubeContactLink.rel =
-            "noopener noreferrer";
+
+        notification.classList.remove(
+            "show"
+        );
+
+
+        setTimeout(function () {
+
+            notification.remove();
+
+        }, 300);
 
     }
 
-}
+
+    /* =====================================================
+       16. BACK TO TOP
+    ===================================================== */
+
+    function updateBackToTop() {
+
+        if (!backToTop) {
+            return;
+        }
 
 
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
+        if (window.scrollY > 500) {
 
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
+            backToTop.classList.add(
+                "show"
+            );
 
-const navigationLinks =
-    document.querySelectorAll(
-        "#navMenu a"
-    );
+        } else {
 
-
-function updateActiveNavigation() {
-
-    let currentSection =
-        "";
-
-
-    sections.forEach(function (section) {
-
-        const sectionTop =
-            section.offsetTop - 160;
-
-        const sectionHeight =
-            section.offsetHeight;
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-
-            currentSection =
-                section.getAttribute("id");
+            backToTop.classList.remove(
+                "show"
+            );
 
         }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateBackToTop,
+        { passive: true }
+    );
+
+
+    updateBackToTop();
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       17. SCROLL REVEAL ANIMATION
+    ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".subject-card, " +
+            ".price-card, " +
+            ".resource-card, " +
+            ".process-step, " +
+            ".feature, " +
+            ".bursary-apply-box"
+        );
+
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add(
+            "scroll-reveal"
+        );
 
     });
 
 
-    navigationLinks.forEach(function (link) {
+    if (
+        "IntersectionObserver" in window
+    ) {
 
-        link.classList.remove("active");
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "revealed"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
 
 
-        const href =
-            link.getAttribute("href");
+        revealElements.forEach(
+            function (element) {
 
-
-        if (href === "#" + currentSection) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    updateActiveNavigation,
-    { passive: true }
-);
-
-updateActiveNavigation();
-
-
-/* =========================================================
-   PREVENT BROKEN YOUTUBE PLACEHOLDER
-========================================================= */
-
-document.querySelectorAll(
-    'a[href="#"]'
-).forEach(function (link) {
-
-    link.addEventListener(
-        "click",
-        function (event) {
-
-            if (
-                link.id === "youtubeLink" ||
-                link.id === "youtubeContactLink"
-            ) {
-
-                event.preventDefault();
-
-                alert(
-                    "The YouTube channel link will be added here once the channel URL is provided."
+                observer.observe(
+                    element
                 );
 
             }
+        );
 
-        }
+    } else {
+
+        revealElements.forEach(
+            function (element) {
+
+                element.classList.add(
+                    "revealed"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       18. FAQ ACCORDION
+    ===================================================== */
+
+    const faqItems =
+        document.querySelectorAll(
+            ".faq-list details"
+        );
+
+
+    faqItems.forEach(function (item) {
+
+        item.addEventListener(
+            "toggle",
+            function () {
+
+                if (!item.open) {
+                    return;
+                }
+
+
+                faqItems.forEach(
+                    function (otherItem) {
+
+                        if (
+                            otherItem !== item &&
+                            otherItem.open
+                        ) {
+
+                            otherItem.open = false;
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       19. FORM INPUT IMPROVEMENT
+    ===================================================== */
+
+    const formInputs =
+        document.querySelectorAll(
+            "#bookingForm input, " +
+            "#bookingForm select, " +
+            "#bookingForm textarea"
+        );
+
+
+    formInputs.forEach(function (input) {
+
+        input.addEventListener(
+            "focus",
+            function () {
+
+                this.parentElement.classList.add(
+                    "input-focused"
+                );
+
+            }
+        );
+
+
+        input.addEventListener(
+            "blur",
+            function () {
+
+                this.parentElement.classList.remove(
+                    "input-focused"
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       20. PREVENT DOUBLE CLICK ON EXTERNAL BUTTONS
+    ===================================================== */
+
+    const externalLinks =
+        document.querySelectorAll(
+            'a[target="_blank"]'
+        );
+
+
+    externalLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                this.setAttribute(
+                    "aria-busy",
+                    "true"
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       21. CONSOLE BRAND MESSAGE
+    ===================================================== */
+
+    console.log(
+        "%c BONGX031 TUTORING ",
+        "background:#0756a8;color:white;font-size:16px;font-weight:bold;padding:8px;"
+    );
+
+
+    console.log(
+        "Mathematics • Physics • Computer Science • Bursary Application Assistance"
     );
 
 });
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-const prefersReducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    );
-
-
-if (prefersReducedMotion.matches) {
-
-    document.documentElement.style.scrollBehavior =
-        "auto";
-
-}
