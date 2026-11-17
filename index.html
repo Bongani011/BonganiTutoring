@@ -3,221 +3,296 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Bongani Tutoring offers Grade 11, Grade 12 and university-level Mathematics, Statistics, Computer Science and Physics tutoring.">
+        content="Bongani Tutoring - Online Mathematics, Physics and Computer Science tutoring for Grade 11, Grade 12 and university students.">
 
     <meta name="keywords"
-        content="Bongani Tutoring, Grade 11 Mathematics, Grade 12 Mathematics, Grade 11 Physics, Grade 12 Physics, university tutoring, Statistics, Computer Science">
+        content="Bongani Tutoring, Mathematics Tutor, Physics Tutor, Grade 12 Mathematics, Grade 11 Mathematics, Computer Science, University Tutor">
+
+    <meta name="author" content="Bongani Tutoring">
 
     <title>Bongani Tutoring | Mathematics, Physics & Computer Science</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
+<!-- =========================================================
      NAVIGATION
-===================================================== -->
+========================================================= -->
 
-<header class="navbar">
+<header class="navbar" id="navbar">
 
-    <a href="#home" class="logo">
+    <div class="nav-container">
 
-        <span class="logo-mark">B</span>
+        <a href="#home" class="logo">
+            <span class="logo-main">BONGANI</span>
+            <span class="logo-sub">TUTORING</span>
+        </a>
 
-        <span class="logo-text">
-            Bongani <strong>Tutoring</strong>
-        </span>
+        <button class="menu-button" id="menuButton" aria-label="Open navigation menu">
+            ☰
+        </button>
 
-    </a>
+        <nav id="navMenu">
 
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#how">How It Works</a>
+            <a href="#booking">Book</a>
+            <a href="#contact">Contact</a>
 
-    <nav id="navMenu">
+        </nav>
 
-        <a href="#home">Home</a>
+        <a href="#booking" class="nav-cta">
+            Book a Session
+        </a>
 
-        <a href="#subjects">Subjects</a>
-
-        <a href="#pricing">Pricing</a>
-
-        <a href="#how">How It Works</a>
-
-        <a href="#contact">Contact</a>
-
-    </nav>
-
-
-    <a href="#booking" class="nav-button">
-        Book a Session
-    </a>
-
-
-    <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open navigation menu"
-        type="button">
-
-        ☰
-
-    </button>
+    </div>
 
 </header>
 
 
-
-<!-- =====================================================
-     MAIN CONTENT
-===================================================== -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <main>
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
 <section class="hero" id="home">
 
-    <div class="hero-content">
+    <div class="hero-background"></div>
 
-        <div class="badge">
-            Grade 11 • Grade 12 • University
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="online-badge">
+                <span class="status-dot"></span>
+                ONLINE TUTORING AVAILABLE
+            </div>
+
+            <h1>
+                Learn Better.
+                <span>Understand More.</span>
+                Achieve More.
+            </h1>
+
+            <p class="hero-description">
+                Professional online tutoring in Mathematics, Physics
+                and Computer Science for Grade 11, Grade 12 and university students.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#booking" class="primary-button">
+                    Book a Session
+                </a>
+
+                <a href="#subjects" class="secondary-button">
+                    View Subjects
+                </a>
+
+            </div>
+
+            <div class="hero-features">
+
+                <div>
+                    <strong>✓</strong>
+                    Online Classes
+                </div>
+
+                <div>
+                    <strong>✓</strong>
+                    Google Meet
+                </div>
+
+                <div>
+                    <strong>✓</strong>
+                    Personal Support
+                </div>
+
+            </div>
+
         </div>
 
 
-        <h1>
-            Understand the Work.
-            <span>Improve Your Marks.</span>
-        </h1>
+        <!-- Tutor card -->
 
+        <div class="hero-tutor-card">
 
-        <p class="hero-text">
+            <div class="photo-container">
 
-            Personalised tutoring designed to help learners
-            and university students understand difficult concepts,
-            solve problems confidently and prepare effectively
-            for tests and examinations.
+                <img src="bongani.jpg"
+                     alt="Bongani - Bongani Tutoring tutor"
+                     class="tutor-photo">
 
-        </p>
+                <div class="photo-placeholder">
+                    <span>YOUR PHOTO</span>
+                    <small>Replace bongani.jpg</small>
+                </div>
 
-
-        <div class="hero-buttons">
-
-            <a href="#booking" class="primary-button">
-                Book a Session
-                <span>→</span>
-            </a>
-
-
-            <a href="#subjects" class="secondary-button">
-                View Subjects
-            </a>
-
-        </div>
-
-
-        <div class="hero-features">
-
-            <div>
-                <span>✓</span>
-                Grade 11 & 12 Support
             </div>
 
-            <div>
-                <span>✓</span>
-                University Support
-            </div>
+            <div class="tutor-card-content">
 
-            <div>
-                <span>✓</span>
-                Test & Exam Preparation
+                <span class="tutor-label">
+                    YOUR ONLINE TUTOR
+                </span>
+
+                <h2>Bongani</h2>
+
+                <p>
+                    Mathematics • Physics • Computer Science
+                </p>
+
+                <div class="tutor-status">
+                    <span class="status-dot"></span>
+                    Available for online tutoring
+                </div>
+
             </div>
 
         </div>
 
     </div>
 
+</section>
 
 
-    <!-- HERO CARD -->
+<!-- =========================================================
+     STATS
+========================================================= -->
 
-    <div class="hero-visual">
+<section class="stats-section">
 
-        <div class="academic-card">
+    <div class="stats-container">
 
-            <div class="card-top">
+        <div class="stat">
+            <h2>3+</h2>
+            <p>Academic Areas</p>
+        </div>
 
-                <div class="math-symbol">
-                    ∑
-                </div>
+        <div class="stat">
+            <h2>11–12</h2>
+            <p>School Grades</p>
+        </div>
 
-                <div class="online-status">
-                    <span></span>
-                    Online Tutoring
-                </div>
+        <div class="stat">
+            <h2>100%</h2>
+            <p>Online Support</p>
+        </div>
 
-            </div>
+        <div class="stat">
+            <h2>R130</h2>
+            <p>School Subjects / Month</p>
+        </div>
 
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section about-section" id="about">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                ABOUT BONGANI TUTORING
+            </span>
 
             <h2>
-                Learn With Confidence
+                Education That Focuses on
+                <span>Understanding</span>
             </h2>
 
-
             <p>
-                Mathematics • Physics
-                <br>
-                Statistics • Computer Science
+                Bongani Tutoring provides structured online academic support
+                designed to help students understand difficult concepts,
+                improve problem-solving skills and prepare confidently for tests
+                and examinations.
             </p>
 
-
-            <div class="card-divider"></div>
-
-
-            <div class="lesson-row">
-
-                <div>
-                    <small>LEVELS</small>
-                    <strong>Grade 11–University</strong>
-                </div>
-
-                <div>
-                    <small>PRICE</small>
-                    <strong>R130 / month</strong>
-                </div>
-
-            </div>
-
         </div>
 
 
-        <div class="floating-card floating-one">
+        <div class="about-grid">
 
-            <span>✓</span>
+            <div class="about-text">
 
-            <div>
-                <strong>Clear Explanations</strong>
-                <small>Step-by-step learning</small>
+                <h3>
+                    More Than Just Memorising
+                </h3>
+
+                <p>
+                    The goal is not simply to give students answers.
+                    Lessons focus on understanding the methods behind the answers
+                    so that students can solve similar problems independently.
+                </p>
+
+                <p>
+                    Whether you are preparing for a Grade 11 or Grade 12
+                    examination, working through university mathematics,
+                    studying physics or learning computer science,
+                    the lessons are structured around your academic needs.
+                </p>
+
+                <a href="#booking" class="primary-button">
+                    Start Learning
+                </a>
+
             </div>
 
-        </div>
+
+            <div class="about-cards">
+
+                <div class="info-card">
+                    <div class="info-icon">01</div>
+
+                    <h3>Understand</h3>
+
+                    <p>
+                        Concepts are explained clearly before moving to difficult
+                        applications.
+                    </p>
+
+                </div>
 
 
-        <div class="floating-card floating-two">
+                <div class="info-card">
+                    <div class="info-icon">02</div>
 
-            <span>R</span>
+                    <h3>Practise</h3>
 
-            <div>
-                <strong>R130 / month</strong>
-                <small>Simple pricing</small>
+                    <p>
+                        Work through examples and problems to develop confidence.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+                    <div class="info-icon">03</div>
+
+                    <h3>Improve</h3>
+
+                    <p>
+                        Identify weak areas and focus preparation where it matters.
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
@@ -227,598 +302,259 @@
 </section>
 
 
-
-<!-- =====================================================
-     QUICK STATS
-===================================================== -->
-
-<section class="stats">
-
-    <div class="stat">
-
-        <div class="stat-icon">
-            11
-        </div>
-
-        <div>
-            <h2>Grade 11</h2>
-            <p>Mathematics & Physics</p>
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-icon">
-            12
-        </div>
-
-        <div>
-            <h2>Grade 12</h2>
-            <p>Mathematics & Physics</p>
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-icon">
-            R
-        </div>
-
-        <div>
-            <h2>R130</h2>
-            <p>Per month</p>
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-icon">
-            U
-        </div>
-
-        <div>
-            <h2>University</h2>
-            <p>Selected academic modules</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      SUBJECTS
-===================================================== -->
+========================================================= -->
 
-<section class="section" id="subjects">
+<section class="section subjects-section" id="subjects">
 
-    <div class="section-heading">
+    <div class="section-container">
 
-        <div class="badge">
-            What I Teach
+        <div class="section-heading centered">
+
+            <span class="section-tag">
+                WHAT I TEACH
+            </span>
+
+            <h2>
+                Choose Your <span>Subject</span>
+            </h2>
+
+            <p>
+                Online tutoring for school and university students.
+            </p>
+
         </div>
 
 
-        <h2>
-            Subjects & Modules
-        </h2>
+        <div class="subject-grid">
 
 
-        <p>
-            Get support from Grade 11 and Grade 12
-            through to university-level studies.
-        </p>
+            <!-- Grade 11 Mathematics -->
 
-    </div>
+            <article class="subject-card mathematics-card">
 
-
-
-    <div class="subject-grid">
-
-
-        <!-- GRADE 11 MATHEMATICS -->
-
-        <article class="subject-card">
-
-            <div class="subject-header">
+                <div class="subject-number">
+                    01
+                </div>
 
                 <div class="subject-icon">
                     ∑
                 </div>
 
-                <span class="subject-number">
-                    01
-                </span>
+                <h3>
+                    Grade 11 Mathematics
+                </h3>
 
-            </div>
+                <p>
+                    Build strong mathematical foundations and improve
+                    problem-solving skills.
+                </p>
 
+                <ul>
+                    <li>Algebra</li>
+                    <li>Functions</li>
+                    <li>Trigonometry</li>
+                    <li>Analytical Geometry</li>
+                    <li>Statistics</li>
+                    <li>Geometry</li>
+                </ul>
 
-            <div class="level-label">
-                GRADE 11
-            </div>
+                <a href="#booking" class="subject-link">
+                    Book Mathematics →
+                </a>
 
-
-            <h3>
-                Mathematics
-            </h3>
-
-
-            <p>
-                Mathematics support covering concepts,
-                calculations, problem solving,
-                tests and examination preparation.
-            </p>
-
-
-            <div class="module-list">
-
-                <span>Grade 11 Mathematics</span>
-
-            </div>
+            </article>
 
 
-            <a href="#booking" class="learn-link">
-                Book Grade 11 Maths →
-            </a>
+            <!-- Grade 12 Mathematics -->
 
-        </article>
+            <article class="subject-card mathematics-card featured-subject">
 
-
-
-        <!-- GRADE 12 MATHEMATICS -->
-
-        <article class="subject-card">
-
-            <div class="subject-header">
-
-                <div class="subject-icon">
-                    ∫
+                <div class="subject-number">
+                    02
                 </div>
 
-                <span class="subject-number">
-                    02
-                </span>
+                <div class="subject-icon">
+                    π
+                </div>
 
-            </div>
+                <div class="popular-badge">
+                    POPULAR
+                </div>
 
+                <h3>
+                    Grade 12 Mathematics
+                </h3>
 
-            <div class="level-label">
-                GRADE 12
-            </div>
+                <p>
+                    Examination-focused support for Grade 12 Mathematics.
+                </p>
 
+                <ul>
+                    <li>Functions</li>
+                    <li>Calculus</li>
+                    <li>Trigonometry</li>
+                    <li>Analytical Geometry</li>
+                    <li>Probability</li>
+                    <li>Statistics</li>
+                </ul>
 
-            <h3>
-                Mathematics
-            </h3>
+                <a href="#booking" class="subject-link">
+                    Book Mathematics →
+                </a>
 
-
-            <p>
-                Grade 12 Mathematics support focused on
-                understanding concepts, practising exam-style
-                questions and preparing for final examinations.
-            </p>
-
-
-            <div class="module-list">
-
-                <span>Grade 12 Mathematics</span>
-
-            </div>
-
-
-            <a href="#booking" class="learn-link">
-                Book Grade 12 Maths →
-            </a>
-
-        </article>
+            </article>
 
 
+            <!-- Grade 11 Physics -->
 
-        <!-- GRADE 11 PHYSICS -->
+            <article class="subject-card physics-card">
 
-        <article class="subject-card">
-
-            <div class="subject-header">
+                <div class="subject-number">
+                    03
+                </div>
 
                 <div class="subject-icon">
                     F
                 </div>
 
-                <span class="subject-number">
-                    03
-                </span>
+                <h3>
+                    Grade 11 Physics
+                </h3>
 
-            </div>
+                <p>
+                    Understand physics principles and learn how to approach
+                    calculations systematically.
+                </p>
 
+                <ul>
+                    <li>Mechanics</li>
+                    <li>Waves</li>
+                    <li>Energy</li>
+                    <li>Electricity</li>
+                    <li>Momentum</li>
+                    <li>Problem Solving</li>
+                </ul>
 
-            <div class="level-label">
-                GRADE 11
-            </div>
+                <a href="#booking" class="subject-link">
+                    Book Physics →
+                </a>
 
-
-            <h3>
-                Physics
-            </h3>
-
-
-            <p>
-                Grade 11 Physics support with concepts,
-                calculations, problem solving and
-                test preparation.
-            </p>
-
-
-            <div class="module-list">
-
-                <span>Grade 11 Physics</span>
-
-            </div>
+            </article>
 
 
-            <a href="#booking" class="learn-link">
-                Book Grade 11 Physics →
-            </a>
+            <!-- Grade 12 Physics -->
 
-        </article>
+            <article class="subject-card physics-card featured-subject">
 
-
-
-        <!-- GRADE 12 PHYSICS -->
-
-        <article class="subject-card">
-
-            <div class="subject-header">
+                <div class="subject-number">
+                    04
+                </div>
 
                 <div class="subject-icon">
                     ⚡
                 </div>
 
-                <span class="subject-number">
-                    04
-                </span>
+                <div class="popular-badge">
+                    EXAM PREP
+                </div>
 
-            </div>
+                <h3>
+                    Grade 12 Physics
+                </h3>
 
+                <p>
+                    Exam preparation and concept-based Physics tutoring.
+                </p>
 
-            <div class="level-label">
-                GRADE 12
-            </div>
+                <ul>
+                    <li>Mechanics</li>
+                    <li>Electricity</li>
+                    <li>Momentum</li>
+                    <li>Waves</li>
+                    <li>Electrodynamics</li>
+                    <li>Exam Preparation</li>
+                </ul>
 
+                <a href="#booking" class="subject-link">
+                    Book Physics →
+                </a>
 
-            <h3>
-                Physics
-            </h3>
-
-
-            <p>
-                Grade 12 Physics tutoring covering
-                calculations, concepts, problem solving
-                and examination preparation.
-            </p>
-
-
-            <div class="module-list">
-
-                <span>Grade 12 Physics</span>
-
-            </div>
+            </article>
 
 
-            <a href="#booking" class="learn-link">
-                Book Grade 12 Physics →
-            </a>
+            <!-- University Mathematics -->
 
-        </article>
+            <article class="subject-card university-card">
 
-
-
-        <!-- UNIVERSITY MATHEMATICS -->
-
-        <article class="subject-card">
-
-            <div class="subject-header">
+                <div class="subject-number">
+                    05
+                </div>
 
                 <div class="subject-icon">
                     ∫
                 </div>
 
-                <span class="subject-number">
-                    05
-                </span>
+                <h3>
+                    University Mathematics
+                </h3>
 
-            </div>
+                <p>
+                    Support for university-level mathematics and mathematical
+                    sciences.
+                </p>
 
+                <ul>
+                    <li>Calculus</li>
+                    <li>Linear Algebra</li>
+                    <li>Statistics</li>
+                    <li>Probability</li>
+                    <li>Proofs</li>
+                    <li>Problem Solving</li>
+                </ul>
 
-            <div class="level-label">
-                UNIVERSITY
-            </div>
+                <a href="#booking" class="subject-link">
+                    Book University Maths →
+                </a>
 
-
-            <h3>
-                Mathematics
-            </h3>
-
-
-            <p>
-                University Mathematics support including
-                calculus, algebra, sequences, series,
-                limits and mathematical problem solving.
-            </p>
-
-
-            <div class="module-list">
-
-                <span>SMTA021</span>
-                <span>SMTA022</span>
-
-            </div>
+            </article>
 
 
-            <a href="#booking" class="learn-link">
-                Book University Maths →
-            </a>
+            <!-- Computer Science -->
 
-        </article>
+            <article class="subject-card computer-card">
 
-
-
-        <!-- UNIVERSITY STATISTICS -->
-
-        <article class="subject-card">
-
-            <div class="subject-header">
-
-                <div class="subject-icon">
-                    σ
+                <div class="subject-number">
+                    06
                 </div>
 
-                <span class="subject-number">
-                    06
-                </span>
-
-            </div>
-
-
-            <div class="level-label">
-                UNIVERSITY
-            </div>
-
-
-            <h3>
-                Statistics
-            </h3>
-
-
-            <p>
-                Probability, distributions, sampling,
-                hypothesis testing, regression,
-                ANOVA and statistical problem solving.
-            </p>
-
-
-            <div class="module-list">
-
-                <span>SSTA021</span>
-                <span>SSTA022</span>
-
-            </div>
-
-
-            <a href="#booking" class="learn-link">
-                Book Statistics →
-            </a>
-
-        </article>
-
-
-
-        <!-- COMPUTER SCIENCE -->
-
-        <article class="subject-card">
-
-            <div class="subject-header">
-
-                <div class="subject-icon code-icon">
+                <div class="subject-icon">
                     &lt;/&gt;
                 </div>
 
-                <span class="subject-number">
-                    07
-                </span>
-
-            </div>
-
-
-            <div class="level-label">
-                UNIVERSITY
-            </div>
-
-
-            <h3>
-                Computer Science
-            </h3>
-
-
-            <p>
-                Programming, algorithms, data structures,
-                computer architecture and computational
-                problem solving.
-            </p>
-
-
-            <div class="module-list">
-
-                <span>SCOA022M</span>
-                <span>Programming</span>
-
-            </div>
-
-
-            <a href="#booking" class="learn-link">
-                Book Computer Science →
-            </a>
-
-        </article>
-
-
-
-        <!-- UNIVERSITY PHYSICS -->
-
-        <article class="subject-card">
-
-            <div class="subject-header">
-
-                <div class="subject-icon">
-                    ⚛
-                </div>
-
-                <span class="subject-number">
-                    08
-                </span>
-
-            </div>
-
-
-            <div class="level-label">
-                UNIVERSITY
-            </div>
-
-
-            <h3>
-                Physics
-            </h3>
-
-
-            <p>
-                University Physics support including
-                mechanics, waves, electricity, fluids,
-                elasticity and problem solving.
-            </p>
-
-
-            <div class="module-list">
-
-                <span>Physics Support</span>
-
-            </div>
-
-
-            <a href="#booking" class="learn-link">
-                Book Physics →
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     WHY CHOOSE BONGANI TUTORING
-===================================================== -->
-
-<section class="why-section">
-
-    <div class="why-content">
-
-        <div>
-
-            <div class="badge">
-                Our Approach
-            </div>
-
-
-            <h2>
-                Don't just memorise the answer.
-                <span>Understand how to get there.</span>
-            </h2>
-
-
-            <p>
-                Tutoring focuses on understanding the method,
-                working through the reasoning and developing
-                the confidence to solve similar questions independently.
-            </p>
-
-        </div>
-
-
-
-        <div class="benefit-list">
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-                    ✓
-                </div>
-
-                <div>
-
-                    <h3>
-                        Step-by-Step Explanations
-                    </h3>
-
-                    <p>
-                        Difficult concepts are broken down
-                        into manageable steps.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-                    ✓
-                </div>
-
-                <div>
-
-                    <h3>
-                        Practice & Problem Solving
-                    </h3>
-
-                    <p>
-                        Work through examples and practise
-                        applying the concepts.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-                    ✓
-                </div>
-
-                <div>
-
-                    <h3>
-                        Test & Exam Preparation
-                    </h3>
-
-                    <p>
-                        Prepare for assessments with
-                        focused academic support.
-                    </p>
-
-                </div>
-
-            </div>
+                <h3>
+                    Computer Science
+                </h3>
+
+                <p>
+                    Programming and computer science support for university students.
+                </p>
+
+                <ul>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>Assembly</li>
+                    <li>Algorithms</li>
+                    <li>Programming Fundamentals</li>
+                </ul>
+
+                <a href="#booking" class="subject-link">
+                    Book Computer Science →
+                </a>
+
+            </article>
 
         </div>
 
@@ -827,178 +563,160 @@
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      PRICING
-===================================================== -->
+========================================================= -->
 
 <section class="section pricing-section" id="pricing">
 
-    <div class="section-heading">
+    <div class="section-container">
 
-        <div class="badge">
-            Simple Pricing
-        </div>
+        <div class="section-heading centered">
 
+            <span class="section-tag">
+                SIMPLE PRICING
+            </span>
 
-        <h2>
-            R130 Per Month
-        </h2>
-
-
-        <p>
-            One simple monthly tutoring price.
-        </p>
-
-    </div>
-
-
-
-    <div class="pricing-grid">
-
-
-        <!-- GRADE 11 -->
-
-        <div class="price-card">
-
-            <div class="price-label">
-                GRADE 11
-            </div>
-
-
-            <h3>
-                Mathematics & Physics
-            </h3>
-
-
-            <div class="price">
-                R130
-                <small>/ month</small>
-            </div>
-
+            <h2>
+                Affordable <span>Online Tutoring</span>
+            </h2>
 
             <p>
-                Academic support for Grade 11 Mathematics
-                and Physics.
+                Start learning without complicated pricing.
             </p>
-
-
-            <ul>
-
-                <li>✓ Mathematics support</li>
-
-                <li>✓ Physics support</li>
-
-                <li>✓ Practice questions</li>
-
-                <li>✓ Test preparation</li>
-
-            </ul>
-
-
-            <a href="#booking" class="price-button">
-                Choose Grade 11
-            </a>
 
         </div>
 
 
+        <div class="pricing-grid">
 
-        <!-- GRADE 12 -->
 
-        <div class="price-card featured">
+            <!-- School -->
 
-            <div class="popular">
-                POPULAR
+            <div class="price-card">
+
+                <div class="price-top">
+
+                    <span class="price-label">
+                        SCHOOL
+                    </span>
+
+                    <h3>
+                        Grade 11 & 12
+                    </h3>
+
+                </div>
+
+                <div class="price">
+                    <span>R</span>130
+                    <small>/ month</small>
+                </div>
+
+                <p class="price-description">
+                    Mathematics and Physics online tutoring.
+                </p>
+
+                <ul class="price-list">
+
+                    <li>✓ Online lessons</li>
+                    <li>✓ Google Meet</li>
+                    <li>✓ Mathematics</li>
+                    <li>✓ Physics</li>
+                    <li>✓ Exam preparation</li>
+                    <li>✓ Academic support</li>
+
+                </ul>
+
+                <a href="#booking" class="price-button">
+                    Get Started
+                </a>
+
             </div>
 
 
-            <div class="price-label">
-                GRADE 12
+            <!-- University -->
+
+            <div class="price-card featured-price">
+
+                <div class="price-top">
+
+                    <span class="price-label">
+                        UNIVERSITY
+                    </span>
+
+                    <h3>
+                        University Support
+                    </h3>
+
+                </div>
+
+                <div class="price">
+                    <span>R</span>130
+                    <small>/ session</small>
+                </div>
+
+                <p class="price-description">
+                    Mathematics and Computer Science tutoring.
+                </p>
+
+                <ul class="price-list">
+
+                    <li>✓ Mathematics</li>
+                    <li>✓ Statistics</li>
+                    <li>✓ Linear Algebra</li>
+                    <li>✓ Computer Science</li>
+                    <li>✓ Programming</li>
+                    <li>✓ Test preparation</li>
+
+                </ul>
+
+                <a href="#booking" class="price-button">
+                    Book a Session
+                </a>
+
             </div>
 
 
-            <h3>
-                Mathematics & Physics
-            </h3>
+            <!-- Online -->
 
+            <div class="price-card">
 
-            <div class="price">
-                R130
-                <small>/ month</small>
+                <div class="price-top">
+
+                    <span class="price-label">
+                        ONLINE
+                    </span>
+
+                    <h3>
+                        Google Meet
+                    </h3>
+
+                </div>
+
+                <div class="price-icon">
+                    ▶
+                </div>
+
+                <p class="price-description">
+                    Learn from wherever you are using online lessons.
+                </p>
+
+                <ul class="price-list">
+
+                    <li>✓ Google Meet lessons</li>
+                    <li>✓ Flexible scheduling</li>
+                    <li>✓ Screen sharing</li>
+                    <li>✓ Online explanations</li>
+                    <li>✓ Problem solving</li>
+                    <li>✓ Direct support</li>
+
+                </ul>
+
+                <a href="#booking" class="price-button">
+                    Book Online
+                </a>
+
             </div>
-
-
-            <p>
-                Focused support for Grade 12 Mathematics
-                and Physics, including examination preparation.
-            </p>
-
-
-            <ul>
-
-                <li>✓ Mathematics support</li>
-
-                <li>✓ Physics support</li>
-
-                <li>✓ Exam-style practice</li>
-
-                <li>✓ Examination preparation</li>
-
-            </ul>
-
-
-            <a href="#booking" class="price-button">
-                Choose Grade 12
-            </a>
-
-        </div>
-
-
-
-        <!-- UNIVERSITY -->
-
-        <div class="price-card">
-
-            <div class="price-label">
-                UNIVERSITY
-            </div>
-
-
-            <h3>
-                Selected Modules
-            </h3>
-
-
-            <div class="price">
-                R130
-                <small>/ month</small>
-            </div>
-
-
-            <p>
-                University-level academic support
-                for selected Mathematics, Statistics,
-                Computer Science and Physics modules.
-            </p>
-
-
-            <ul>
-
-                <li>✓ Mathematics</li>
-
-                <li>✓ Statistics</li>
-
-                <li>✓ Computer Science</li>
-
-                <li>✓ Physics</li>
-
-            </ul>
-
-
-            <a href="#booking" class="price-button">
-                Choose University
-            </a>
 
         </div>
 
@@ -1007,563 +725,646 @@
 </section>
 
 
+<!-- =========================================================
+     GOOGLE MEET + YOUTUBE
+========================================================= -->
 
-<!-- =====================================================
+<section class="section platforms-section">
+
+    <div class="section-container">
+
+        <div class="section-heading centered">
+
+            <span class="section-tag">
+                LEARN ONLINE
+            </span>
+
+            <h2>
+                Learn With <span>Bongani</span>
+            </h2>
+
+            <p>
+                Online lessons, educational content and direct communication.
+            </p>
+
+        </div>
+
+
+        <div class="platform-grid">
+
+
+            <!-- Google Meet -->
+
+            <div class="platform-card google-card">
+
+                <div class="platform-logo google-meet-logo">
+                    <div class="meet-camera">
+                        ▶
+                    </div>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Google Meet
+                    </h3>
+
+                    <p>
+                        Attend your tutoring sessions online through Google Meet.
+                    </p>
+
+                    <!-- Replace # with your actual Google Meet link -->
+
+                    <a href="#booking" class="platform-button">
+                        Join / Book Google Meet
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- YouTube -->
+
+            <div class="platform-card youtube-card">
+
+                <div class="platform-logo youtube-logo">
+                    ▶
+                </div>
+
+                <div>
+
+                    <h3>
+                        YouTube
+                    </h3>
+
+                    <p>
+                        Watch educational videos, explanations and tutoring content.
+                    </p>
+
+                    <!-- Replace # with your actual YouTube channel -->
+
+                    <a href="#"
+                       class="platform-button"
+                       id="youtubeLink">
+                        Visit YouTube Channel
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
      HOW IT WORKS
-===================================================== -->
+========================================================= -->
 
 <section class="section process-section" id="how">
 
-    <div class="section-heading">
+    <div class="section-container">
 
-        <div class="badge">
-            Simple Process
-        </div>
+        <div class="section-heading centered">
 
-
-        <h2>
-            How It Works
-        </h2>
-
-
-        <p>
-            Getting started is simple.
-        </p>
-
-    </div>
-
-
-
-    <div class="steps">
-
-
-        <div class="step">
-
-            <div class="step-number">
-                01
-            </div>
-
-
-            <h3>
-                Choose Your Level
-            </h3>
-
-
-            <p>
-                Choose Grade 11, Grade 12
-                or University.
-            </p>
-
-        </div>
-
-
-
-        <div class="step">
-
-            <div class="step-number">
-                02
-            </div>
-
-
-            <h3>
-                Choose Your Subject
-            </h3>
-
-
-            <p>
-                Select Mathematics, Physics,
-                Statistics or Computer Science.
-            </p>
-
-        </div>
-
-
-
-        <div class="step">
-
-            <div class="step-number">
-                03
-            </div>
-
-
-            <h3>
-                Send Your Request
-            </h3>
-
-
-            <p>
-                Tell me your preferred date,
-                time and what you need help with.
-            </p>
-
-        </div>
-
-
-
-        <div class="step">
-
-            <div class="step-number">
-                04
-            </div>
-
-
-            <h3>
-                Learn & Practise
-            </h3>
-
-
-            <p>
-                Work through concepts,
-                examples and practice questions.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     BOOKING
-===================================================== -->
-
-<section class="booking-section" id="booking">
-
-    <div class="booking-wrapper">
-
-
-        <div class="booking-intro">
-
-            <div class="badge">
-                Book a Session
-            </div>
-
+            <span class="section-tag">
+                HOW IT WORKS
+            </span>
 
             <h2>
-                Ready to improve your understanding?
+                Start Learning in <span>4 Steps</span>
             </h2>
-
-
-            <p>
-                Complete the form and send your
-                tutoring request.
-            </p>
-
-
-            <div class="booking-points">
-
-                <div>
-                    ✓ Grade 11 & Grade 12
-                </div>
-
-                <div>
-                    ✓ University students
-                </div>
-
-                <div>
-                    ✓ Mathematics & Physics
-                </div>
-
-                <div>
-                    ✓ Statistics & Computer Science
-                </div>
-
-            </div>
 
         </div>
 
 
-
-        <form id="bookingForm">
-
-
-            <!-- NAME + LEVEL -->
-
-            <div class="form-row">
-
-                <div class="form-group">
-
-                    <label for="name">
-                        Full Name
-                    </label>
+        <div class="process-grid">
 
 
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your name"
-                        required>
+            <div class="process-card">
 
+                <div class="process-number">
+                    01
                 </div>
 
+                <h3>
+                    Choose Your Subject
+                </h3>
 
-
-                <div class="form-group">
-
-                    <label for="level">
-                        Academic Level
-                    </label>
-
-
-                    <select
-                        id="level"
-                        name="level"
-                        required>
-
-                        <option value="">
-                            Select your level
-                        </option>
-
-                        <option value="Grade 11">
-                            Grade 11
-                        </option>
-
-                        <option value="Grade 12">
-                            Grade 12
-                        </option>
-
-                        <option value="University">
-                            University
-                        </option>
-
-                    </select>
-
-                </div>
+                <p>
+                    Select Mathematics, Physics or Computer Science.
+                </p>
 
             </div>
 
 
+            <div class="process-card">
 
-            <!-- SUBJECT + MODULE -->
-
-            <div class="form-row">
-
-                <div class="form-group">
-
-                    <label for="subject">
-                        Subject
-                    </label>
-
-
-                    <select
-                        id="subject"
-                        name="subject"
-                        required>
-
-                        <option value="">
-                            Select subject
-                        </option>
-
-                        <option value="Mathematics">
-                            Mathematics
-                        </option>
-
-                        <option value="Physics">
-                            Physics
-                        </option>
-
-                        <option value="Statistics">
-                            Statistics
-                        </option>
-
-                        <option value="Computer Science">
-                            Computer Science
-                        </option>
-
-                    </select>
-
+                <div class="process-number">
+                    02
                 </div>
 
+                <h3>
+                    Book a Session
+                </h3>
 
-
-                <div class="form-group">
-
-                    <label for="module">
-                        Module / Topic
-                    </label>
-
-
-                    <input
-                        type="text"
-                        id="module"
-                        name="module"
-                        placeholder="e.g. SMTA022 or Algebra"
-                        required>
-
-                </div>
+                <p>
+                    Complete the booking form with your preferred details.
+                </p>
 
             </div>
 
 
+            <div class="process-card">
 
-            <!-- DATE + SESSION -->
-
-            <div class="form-row">
-
-                <div class="form-group">
-
-                    <label for="date">
-                        Preferred Date
-                    </label>
-
-
-                    <input
-                        type="date"
-                        id="date"
-                        name="date"
-                        required>
-
+                <div class="process-number">
+                    03
                 </div>
 
+                <h3>
+                    Receive Confirmation
+                </h3>
 
-
-                <div class="form-group">
-
-                    <label for="session">
-                        Support Required
-                    </label>
-
-
-                    <select
-                        id="session"
-                        name="session"
-                        required>
-
-                        <option value="">
-                            Select support
-                        </option>
-
-                        <option value="Regular Tutoring">
-                            Regular Tutoring
-                        </option>
-
-                        <option value="Test Preparation">
-                            Test Preparation
-                        </option>
-
-                        <option value="Exam Preparation">
-                            Exam Preparation
-                        </option>
-
-                        <option value="Assignment Help">
-                            Assignment Help
-                        </option>
-
-                    </select>
-
-                </div>
+                <p>
+                    Your booking information will be sent through WhatsApp.
+                </p>
 
             </div>
 
 
+            <div class="process-card">
 
-            <!-- MESSAGE -->
+                <div class="process-number">
+                    04
+                </div>
 
-            <div class="form-group">
+                <h3>
+                    Join Google Meet
+                </h3>
 
-                <label for="message">
-                    What do you need help with?
-                </label>
-
-
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    placeholder="Tell me what you need help with..."
-                    required></textarea>
+                <p>
+                    Attend your online tutoring session and start learning.
+                </p>
 
             </div>
 
-
-
-            <!-- SUBMIT -->
-
-            <button
-                type="submit"
-                class="submit-button">
-
-                Send Booking Request
-                <span>→</span>
-
-            </button>
-
-
-            <p
-                id="formMessage"
-                class="form-message">
-            </p>
-
-        </form>
+        </div>
 
     </div>
 
 </section>
 
 
+<!-- =========================================================
+     BOOKING
+========================================================= -->
 
-<!-- =====================================================
+<section class="section booking-section" id="booking">
+
+    <div class="section-container">
+
+        <div class="booking-wrapper">
+
+
+            <div class="booking-info">
+
+                <span class="section-tag">
+                    BOOK A SESSION
+                </span>
+
+                <h2>
+                    Ready to <span>Improve?</span>
+                </h2>
+
+                <p>
+                    Complete the form and send your tutoring request directly
+                    through WhatsApp.
+                </p>
+
+
+                <div class="booking-benefit">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>Online Tutoring</strong>
+
+                        <p>
+                            Lessons are conducted online through Google Meet.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="booking-benefit">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>Flexible Support</strong>
+
+                        <p>
+                            Choose the subject and area where you need help.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="booking-benefit">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>Direct Communication</strong>
+
+                        <p>
+                            Booking information is sent directly to WhatsApp.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOKING FORM -->
+
+            <form id="bookingForm" class="booking-form">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="level">
+                            Grade / Level
+                        </label>
+
+                        <select id="level" name="level" required>
+
+                            <option value="">
+                                Select your level
+                            </option>
+
+                            <option value="Grade 11">
+                                Grade 11
+                            </option>
+
+                            <option value="Grade 12">
+                                Grade 12
+                            </option>
+
+                            <option value="University">
+                                University
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <select id="subject" name="subject" required>
+
+                            <option value="">
+                                Select a subject
+                            </option>
+
+                            <option value="Mathematics">
+                                Mathematics
+                            </option>
+
+                            <option value="Physics">
+                                Physics
+                            </option>
+
+                            <option value="Computer Science">
+                                Computer Science
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="module">
+                            Topic / Module
+                        </label>
+
+                        <input
+                            type="text"
+                            id="module"
+                            name="module"
+                            placeholder="e.g. Calculus"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Preferred Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="session">
+                            Preferred Time
+                        </label>
+
+                        <select id="session" name="session" required>
+
+                            <option value="">
+                                Select a time
+                            </option>
+
+                            <option value="Morning">
+                                Morning
+                            </option>
+
+                            <option value="Afternoon">
+                                Afternoon
+                            </option>
+
+                            <option value="Evening">
+                                Evening
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Additional Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Tell me what you need help with..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                    id="submitButton">
+
+                    Send Booking Request on WhatsApp
+
+                </button>
+
+
+                <div
+                    id="formMessage"
+                    class="form-message">
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
      CONTACT
-===================================================== -->
+========================================================= -->
 
 <section class="section contact-section" id="contact">
 
-    <div class="section-heading">
+    <div class="section-container">
 
-        <div class="badge">
-            Contact
+        <div class="section-heading centered">
+
+            <span class="section-tag">
+                CONTACT BONGANI
+            </span>
+
+            <h2>
+                Let's Start <span>Learning</span>
+            </h2>
+
+            <p>
+                Have a question? Contact Bongani directly.
+            </p>
+
         </div>
 
 
-        <h2>
-            Let's Work Together
-        </h2>
+        <div class="contact-grid">
 
 
-        <p>
-            Have a question before booking?
-            Get in touch and discuss what you need help with.
-        </p>
+            <!-- WhatsApp -->
 
-    </div>
+            <a
+                href="https://wa.me/27786701301"
+                class="contact-card"
+                target="_blank"
+                rel="noopener noreferrer">
 
+                <div class="contact-icon whatsapp-icon">
+                    W
+                </div>
 
+                <div>
 
-    <div class="contact-grid">
+                    <h3>
+                        WhatsApp
+                    </h3>
 
+                    <p>
+                        Chat directly about tutoring, bookings and availability.
+                    </p>
 
-        <a
-            href="#booking"
-            class="contact-card">
+                    <span>
+                        078 670 1301 →
+                    </span>
 
-            <div class="contact-icon">
-                W
-            </div>
+                </div>
 
-
-            <div>
-
-                <h3>
-                    WhatsApp
-                </h3>
-
-
-                <p>
-                    Contact me directly for tutoring
-                    enquiries and bookings.
-                </p>
+            </a>
 
 
-                <span>
-                    Book through WhatsApp →
-                </span>
+            <!-- Email -->
 
-            </div>
+            <a
+                href="mailto:bonganinkhensani@gmail.com"
+                class="contact-card">
 
-        </a>
+                <div class="contact-icon email-icon">
+                    @
+                </div>
 
+                <div>
 
+                    <h3>
+                        Email
+                    </h3>
 
-        <a
-            href="mailto:YOUR-EMAIL@example.com"
-            class="contact-card">
+                    <p>
+                        Send an academic enquiry or tutoring question.
+                    </p>
 
-            <div class="contact-icon">
-                @
-            </div>
+                    <span>
+                        bonganinkhensani@gmail.com →
+                    </span>
 
+                </div>
 
-            <div>
-
-                <h3>
-                    Email
-                </h3>
-
-
-                <p>
-                    Available for academic enquiries
-                    and tutoring questions.
-                </p>
+            </a>
 
 
-                <span>
-                    Send an email →
-                </span>
+            <!-- Google Meet -->
 
-            </div>
+            <a
+                href="#booking"
+                class="contact-card">
 
-        </a>
+                <div class="contact-icon meet-icon">
+                    ▶
+                </div>
+
+                <div>
+
+                    <h3>
+                        Google Meet
+                    </h3>
+
+                    <p>
+                        Tutoring sessions are conducted online through Google Meet.
+                    </p>
+
+                    <span>
+                        Book an online lesson →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- YouTube -->
+
+            <a
+                href="#"
+                class="contact-card"
+                id="youtubeContactLink">
+
+                <div class="contact-icon youtube-icon">
+                    ▶
+                </div>
+
+                <div>
+
+                    <h3>
+                        YouTube
+                    </h3>
+
+                    <p>
+                        Follow educational content and tutoring videos.
+                    </p>
+
+                    <span>
+                        Visit YouTube →
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
 
     </div>
 
 </section>
-
-
-
-<!-- =====================================================
-     FINAL CALL TO ACTION
-===================================================== -->
-
-<section class="final-cta">
-
-    <div>
-
-        <div class="badge">
-            Start Learning
-        </div>
-
-
-        <h2>
-            Build your understanding.
-            Improve your confidence.
-        </h2>
-
-
-        <p>
-            Mathematics, Physics, Statistics
-            and Computer Science support.
-        </p>
-
-    </div>
-
-
-    <a href="#booking" class="primary-button">
-        Book a Session →
-    </a>
-
-</section>
-
 
 </main>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
-<footer>
+<footer class="footer">
 
-    <div class="footer-main">
+    <div class="footer-container">
 
+        <div class="footer-brand">
 
-        <div>
-
-            <a href="#home" class="footer-logo">
-                Bongani Tutoring
+            <a href="#home" class="logo footer-logo">
+                <span class="logo-main">BONGANI</span>
+                <span class="logo-sub">TUTORING</span>
             </a>
 
+            <p>
+                Mathematics • Physics • Computer Science
+            </p>
 
             <p>
-                Academic support for Grade 11,
-                Grade 12 and university students.
+                Online tutoring through Google Meet.
             </p>
 
         </div>
-
 
 
         <div class="footer-links">
@@ -1572,54 +1373,32 @@
                 Quick Links
             </h3>
 
-
-            <a href="#subjects">
-                Subjects
-            </a>
-
-
-            <a href="#pricing">
-                Pricing
-            </a>
-
-
-            <a href="#how">
-                How It Works
-            </a>
-
-
-            <a href="#booking">
-                Book a Session
-            </a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#booking">Book</a>
+            <a href="#contact">Contact</a>
 
         </div>
 
 
-
-        <div class="footer-links">
+        <div class="footer-contact">
 
             <h3>
-                Subjects
+                Contact
             </h3>
 
-
-            <a href="#subjects">
-                Mathematics
+            <a href="tel:+27786701301">
+                078 670 1301
             </a>
 
-
-            <a href="#subjects">
-                Physics
+            <a href="mailto:bonganinkhensani@gmail.com">
+                bonganinkhensani@gmail.com
             </a>
 
-
-            <a href="#subjects">
-                Statistics
-            </a>
-
-
-            <a href="#subjects">
-                Computer Science
+            <a href="#booking">
+                Online via Google Meet
             </a>
 
         </div>
@@ -1627,15 +1406,12 @@
     </div>
 
 
-
     <div class="footer-bottom">
 
         <p>
-            © <span id="year"></span>
-            Bongani Tutoring.
+            © <span id="year"></span> Bongani Tutoring.
             All rights reserved.
         </p>
-
 
         <p>
             Learn • Practise • Improve
@@ -1646,9 +1422,21 @@
 </footer>
 
 
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top">
+
+    ↑
+
+</button>
+
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
