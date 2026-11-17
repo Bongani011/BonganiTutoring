@@ -1,1063 +1,2547 @@
-/* =========================================================
-   BONGX031 TUTORING
-   PROFESSIONAL WEBSITE JAVASCRIPT
-========================================================= */
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 
-/* =========================================================
-   1. WAIT FOR WEBSITE TO LOAD
-========================================================= */
+    <meta charset="UTF-8">
 
-document.addEventListener("DOMContentLoaded", function () {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* -----------------------------------------------------
-       ELEMENTS
-    ----------------------------------------------------- */
+    <meta
+        name="description"
+        content="BONGX031 provides online Mathematics, Physics and Computer Science tutoring for Grade 11, Grade 12 and university students, plus bursary application assistance."
+    >
 
-    const header = document.getElementById("header");
-    const menuButton = document.getElementById("menuButton");
-    const navMenu = document.getElementById("navMenu");
-    const navLinks = document.querySelectorAll("#navMenu a");
-    const bookingForm = document.getElementById("bookingForm");
-    const dateInput = document.getElementById("date");
-    const backToTop = document.getElementById("backToTop");
-    const yearElement = document.getElementById("year");
-    const profileImage = document.getElementById("profileImage");
-    const imageFallback = document.getElementById("imageFallback");
+    <meta
+        name="keywords"
+        content="BONGX031, tutoring, Mathematics tutor, Physics tutor, Grade 11, Grade 12, university Mathematics, Computer Science, bursary application assistance"
+    >
 
+    <meta name="author" content="BONGX031 Tutoring">
 
-    /* =====================================================
-       2. CURRENT YEAR
-    ===================================================== */
+    <title>BONGX031 | Tutoring & Bursary Application Assistance</title>
 
-    if (yearElement) {
+    <link rel="stylesheet" href="style.css">
 
-        yearElement.textContent = new Date().getFullYear();
+</head>
 
-    }
 
+<body>
 
-    /* =====================================================
-       3. MOBILE MENU
-    ===================================================== */
 
-    function openMenu() {
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-        navMenu.classList.add("active");
+<header class="header" id="header">
 
-        menuButton.classList.add("active");
+    <div class="container nav-container">
 
-        menuButton.setAttribute("aria-expanded", "true");
 
-        menuButton.setAttribute("aria-label", "Close navigation menu");
+        <!-- LOGO -->
 
-    }
+        <a href="#home" class="logo">
 
+            <span class="logo-main">
+                BONGX031
+            </span>
 
-    function closeMenu() {
+            <span class="logo-sub">
+                TUTORING
+            </span>
 
-        navMenu.classList.remove("active");
+        </a>
 
-        menuButton.classList.remove("active");
 
-        menuButton.setAttribute("aria-expanded", "false");
+        <!-- MOBILE MENU BUTTON -->
 
-        menuButton.setAttribute("aria-label", "Open navigation menu");
+        <button
+            class="menu-toggle"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
 
-    }
 
+        <!-- NAVIGATION -->
 
-    function toggleMenu() {
+        <nav class="nav" id="navMenu">
 
-        if (navMenu.classList.contains("active")) {
+            <a href="#home">
+                Home
+            </a>
 
-            closeMenu();
+            <a href="#about">
+                About
+            </a>
 
-        } else {
+            <a href="#subjects">
+                Subjects
+            </a>
 
-            openMenu();
+            <a href="#bursaries">
+                Bursaries
+            </a>
 
-        }
+            <a href="#pricing">
+                Pricing
+            </a>
 
-    }
+            <a href="#resources">
+                Resources
+            </a>
 
+            <a href="#faq">
+                FAQ
+            </a>
 
-    if (menuButton && navMenu) {
+            <a href="#booking" class="nav-book">
+                Book Now
+            </a>
 
-        menuButton.addEventListener("click", toggleMenu);
+        </nav>
 
-    }
+    </div>
 
+</header>
 
-    /* =====================================================
-       4. CLOSE MENU WHEN LINK IS CLICKED
-    ===================================================== */
 
-    navLinks.forEach(function (link) {
 
-        link.addEventListener("click", function () {
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
 
-            closeMenu();
+<main>
 
-        });
 
-    });
+<!-- =====================================================
+     HERO
+===================================================== -->
 
+<section class="hero" id="home">
 
-    /* =====================================================
-       5. CLOSE MENU WHEN CLICKING OUTSIDE
-    ===================================================== */
+    <div class="hero-shape shape-one"></div>
 
-    document.addEventListener("click", function (event) {
+    <div class="hero-shape shape-two"></div>
 
-        if (!navMenu || !menuButton) {
-            return;
-        }
 
+    <div class="container hero-grid">
 
-        const clickedInsideMenu =
-            navMenu.contains(event.target);
 
-        const clickedMenuButton =
-            menuButton.contains(event.target);
+        <!-- HERO TEXT -->
 
+        <div class="hero-content">
 
-        if (
-            !clickedInsideMenu &&
-            !clickedMenuButton &&
-            navMenu.classList.contains("active")
-        ) {
 
-            closeMenu();
+            <div class="hero-badge">
 
-        }
+                ONLINE ACADEMIC SUPPORT
 
-    });
-
-
-    /* =====================================================
-       6. CLOSE MOBILE MENU WITH ESCAPE
-    ===================================================== */
-
-    document.addEventListener("keydown", function (event) {
-
-        if (
-            event.key === "Escape" &&
-            navMenu.classList.contains("active")
-        ) {
-
-            closeMenu();
-
-            menuButton.focus();
-
-        }
-
-    });
-
-
-    /* =====================================================
-       7. HEADER SCROLL EFFECT
-    ===================================================== */
-
-    function updateHeader() {
-
-        if (!header) {
-            return;
-        }
-
-
-        if (window.scrollY > 40) {
-
-            header.classList.add("scrolled");
-
-        } else {
-
-            header.classList.remove("scrolled");
-
-        }
-
-    }
-
-
-    window.addEventListener(
-        "scroll",
-        updateHeader,
-        { passive: true }
-    );
-
-
-    updateHeader();
-
-
-    /* =====================================================
-       8. SMOOTH SCROLLING
-    ===================================================== */
-
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            const targetID =
-                this.getAttribute("href");
-
-
-            if (
-                !targetID ||
-                targetID === "#"
-            ) {
-
-                return;
-
-            }
-
-
-            const target =
-                document.querySelector(targetID);
-
-
-            if (!target) {
-                return;
-            }
-
-
-            event.preventDefault();
-
-
-            const headerHeight =
-                header
-                    ? header.offsetHeight
-                    : 0;
-
-
-            const targetPosition =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight;
-
-
-            window.scrollTo({
-
-                top: targetPosition,
-
-                behavior: "smooth"
-
-            });
-
-        });
-
-    });
-
-
-    /* =====================================================
-       9. ACTIVE NAVIGATION LINK
-    ===================================================== */
-
-    const sections =
-        document.querySelectorAll("section[id]");
-
-
-    function updateActiveNavigation() {
-
-        let currentSection = "";
-
-
-        sections.forEach(function (section) {
-
-            const sectionTop =
-                section.offsetTop - 180;
-
-            const sectionBottom =
-                sectionTop + section.offsetHeight;
-
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionBottom
-            ) {
-
-                currentSection =
-                    section.getAttribute("id");
-
-            }
-
-        });
-
-
-        navLinks.forEach(function (link) {
-
-            link.classList.remove("active");
-
-            const href =
-                link.getAttribute("href");
-
-
-            if (
-                href === "#" + currentSection
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    }
-
-
-    window.addEventListener(
-        "scroll",
-        updateActiveNavigation,
-        { passive: true }
-    );
-
-
-    updateActiveNavigation();
-
-
-    /* =====================================================
-       10. PROFILE IMAGE FALLBACK
-    ===================================================== */
-
-    if (profileImage) {
-
-        profileImage.addEventListener("error", function () {
-
-            profileImage.style.display = "none";
-
-
-            if (imageFallback) {
-
-                imageFallback.style.display = "flex";
-
-            }
-
-        });
-
-    }
-
-
-    /* =====================================================
-       11. BOOKING DATE
-    ===================================================== */
-
-    if (dateInput) {
-
-        const today =
-            new Date();
-
-
-        const year =
-            today.getFullYear();
-
-
-        const month =
-            String(
-                today.getMonth() + 1
-            ).padStart(2, "0");
-
-
-        const day =
-            String(
-                today.getDate()
-            ).padStart(2, "0");
-
-
-        const formattedDate =
-            `${year}-${month}-${day}`;
-
-
-        dateInput.min =
-            formattedDate;
-
-    }
-
-
-    /* =====================================================
-       12. BOOKING FORM
-    ===================================================== */
-
-    if (bookingForm) {
-
-        bookingForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                /* -----------------------------------------
-                   GET FORM VALUES
-                ----------------------------------------- */
-
-                const name =
-                    document.getElementById("name")
-                        ?.value.trim();
-
-
-                const level =
-                    document.getElementById("level")
-                        ?.value.trim();
-
-
-                const subject =
-                    document.getElementById("subject")
-                        ?.value.trim();
-
-
-                const topic =
-                    document.getElementById("topic")
-                        ?.value.trim();
-
-
-                const date =
-                    document.getElementById("date")
-                        ?.value;
-
-
-                const time =
-                    document.getElementById("time")
-                        ?.value;
-
-
-                const message =
-                    document.getElementById("message")
-                        ?.value.trim();
-
-
-                /* -----------------------------------------
-                   VALIDATION
-                ----------------------------------------- */
-
-                if (!name) {
-
-                    showNotification(
-                        "Please enter your full name.",
-                        "error"
-                    );
-
-                    document.getElementById("name").focus();
-
-                    return;
-
-                }
-
-
-                if (!level) {
-
-                    showNotification(
-                        "Please select your grade or level.",
-                        "error"
-                    );
-
-                    document.getElementById("level").focus();
-
-                    return;
-
-                }
-
-
-                if (!subject) {
-
-                    showNotification(
-                        "Please select a subject or service.",
-                        "error"
-                    );
-
-                    document.getElementById("subject").focus();
-
-                    return;
-
-                }
-
-
-                if (!date) {
-
-                    showNotification(
-                        "Please select your preferred date.",
-                        "error"
-                    );
-
-                    document.getElementById("date").focus();
-
-                    return;
-
-                }
-
-
-                if (!time) {
-
-                    showNotification(
-                        "Please select your preferred time.",
-                        "error"
-                    );
-
-                    document.getElementById("time").focus();
-
-                    return;
-
-                }
-
-
-                /* -----------------------------------------
-                   FORMAT DATE
-                ----------------------------------------- */
-
-                const formattedDate =
-                    formatDate(date);
-
-
-                /* -----------------------------------------
-                   CREATE WHATSAPP MESSAGE
-                ----------------------------------------- */
-
-                let whatsappMessage =
-
-`Hello BONGX031 👋
-
-I would like to make a booking.
-
-━━━━━━━━━━━━━━━━━━━━
-
-STUDENT DETAILS
-
-Name: ${name}
-
-Grade / Level: ${level}
-
-Subject / Service: ${subject}
-
-Topic / Module: ${topic || "Not specified"}
-
-Preferred Date: ${formattedDate}
-
-Preferred Time: ${time}
-
-Additional Message:
-${message || "No additional message"}
-
-━━━━━━━━━━━━━━━━━━━━
-
-I would like to confirm availability and receive further information.
-
-Thank you.`;
-
-
-
-                /* -----------------------------------------
-                   WHATSAPP URL
-                ----------------------------------------- */
-
-                const phoneNumber =
-                    "27786701301";
-
-
-                const whatsappURL =
-                    "https://wa.me/" +
-                    phoneNumber +
-                    "?text=" +
-                    encodeURIComponent(
-                        whatsappMessage
-                    );
-
-
-                /* -----------------------------------------
-                   DISABLE BUTTON
-                ----------------------------------------- */
-
-                const submitButton =
-                    bookingForm.querySelector(
-                        'button[type="submit"]'
-                    );
-
-
-                if (submitButton) {
-
-                    submitButton.disabled = true;
-
-                    submitButton.textContent =
-                        "Opening WhatsApp...";
-
-                }
-
-
-                /* -----------------------------------------
-                   OPEN WHATSAPP
-                ----------------------------------------- */
-
-                window.open(
-                    whatsappURL,
-                    "_blank"
-                );
-
-
-                /* -----------------------------------------
-                   SUCCESS MESSAGE
-                ----------------------------------------- */
-
-                showNotification(
-                    "Your booking request has been prepared for WhatsApp.",
-                    "success"
-                );
-
-
-                /* -----------------------------------------
-                   RESET FORM
-                ----------------------------------------- */
-
-                setTimeout(function () {
-
-                    bookingForm.reset();
-
-
-                    if (submitButton) {
-
-                        submitButton.disabled = false;
-
-                        submitButton.textContent =
-                            "Send Booking Request on WhatsApp";
-
-                    }
-
-                }, 1500);
-
-            });
-
-    }
-
-
-    /* =====================================================
-       13. FORMAT DATE
-    ===================================================== */
-
-    function formatDate(dateString) {
-
-        if (!dateString) {
-
-            return "Not specified";
-
-        }
-
-
-        const date =
-            new Date(
-                dateString + "T00:00:00"
-            );
-
-
-        return date.toLocaleDateString(
-            "en-ZA",
-            {
-                day: "2-digit",
-                month: "long",
-                year: "numeric"
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       14. NOTIFICATION SYSTEM
-    ===================================================== */
-
-    function showNotification(
-        message,
-        type = "success"
-    ) {
-
-        const existing =
-            document.querySelector(
-                ".site-notification"
-            );
-
-
-        if (existing) {
-
-            existing.remove();
-
-        }
-
-
-        const notification =
-            document.createElement("div");
-
-
-        notification.className =
-            "site-notification";
-
-
-        if (type === "error") {
-
-            notification.classList.add(
-                "notification-error"
-            );
-
-        } else {
-
-            notification.classList.add(
-                "notification-success"
-            );
-
-        }
-
-
-        notification.innerHTML = `
-
-            <div class="notification-icon">
-                ${type === "error" ? "!" : "✓"}
             </div>
 
-            <div class="notification-message">
-                ${message}
+
+            <p class="brand-label">
+
+                BONGX031
+
+            </p>
+
+
+            <h1>
+
+                Learn Better.
+
+                <span>
+                    Understand More.
+                </span>
+
+                Achieve More.
+
+            </h1>
+
+
+            <p class="hero-text">
+
+                Professional online tutoring in Mathematics, Physics
+                and Computer Science for Grade 11, Grade 12 and
+                university students.
+
+                <br><br>
+
+                <strong>
+                    Bursary application assistance also available.
+                </strong>
+
+            </p>
+
+
+            <!-- HERO BUTTONS -->
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#booking"
+                    class="btn btn-primary"
+                >
+                    Book a Session
+                </a>
+
+
+                <a
+                    href="https://wa.me/27786701301"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp"
+                >
+                    WhatsApp Me
+                </a>
+
             </div>
 
-            <button
-                class="notification-close"
-                aria-label="Close notification"
+
+            <!-- HERO TRUST -->
+
+            <div class="hero-trust">
+
+
+                <div>
+
+                    <strong>
+                        R130
+                    </strong>
+
+                    <span>
+                        School tutoring / month
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Online
+                    </strong>
+
+                    <span>
+                        Google Meet sessions
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Bursary
+                    </strong>
+
+                    <span>
+                        Application assistance
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HERO PROFILE -->
+
+        <div class="hero-profile">
+
+
+            <div class="profile-card">
+
+
+                <div class="profile-image-wrapper">
+
+
+                    <img
+                        src="bongani.jpg"
+                        alt="BONGX031 tutor"
+                        class="profile-image"
+                        id="profileImage"
+                    >
+
+
+                    <div
+                        class="image-fallback"
+                        id="imageFallback"
+                    >
+                        B
+                    </div>
+
+
+                    <div class="online-status">
+
+                        <span></span>
+
+                        Online tutoring
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="profile-info">
+
+
+                    <p class="small-label">
+                        YOUR TUTOR
+                    </p>
+
+
+                    <h2>
+                        BONGX031
+                    </h2>
+
+
+                    <p>
+                        Mathematics • Physics • Computer Science
+                    </p>
+
+
+                    <div class="profile-tags">
+
+                        <span>
+                            Grade 11
+                        </span>
+
+                        <span>
+                            Grade 12
+                        </span>
+
+                        <span>
+                            University
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+
+        <div class="stat">
+
+            <strong>
+                R130
+            </strong>
+
+            <span>
+                School tutoring / month
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                R130
+            </strong>
+
+            <span>
+                University support / session
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                100%
+            </strong>
+
+            <span>
+                Online convenience
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                1-on-1
+            </strong>
+
+            <span>
+                Focused learning
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="section about-section" id="about">
+
+    <div class="container about-grid">
+
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ABOUT BONGX031
+            </span>
+
+
+            <h2>
+
+                More than just tutoring.
+
+                <span>
+                    Real understanding.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="about-content">
+
+
+            <p>
+
+                BONGX031 provides structured online academic support
+                designed to help students understand difficult concepts,
+                practise effectively and become more confident in their
+                studies.
+
+            </p>
+
+
+            <p>
+
+                Lessons focus on explanation, worked examples,
+                problem-solving and exam preparation rather than simply
+                memorising answers.
+
+            </p>
+
+
+            <div class="about-features">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Clear explanations
+                        </h3>
+
+                        <p>
+                            Difficult topics are broken down into
+                            manageable steps.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Practical practice
+                        </h3>
+
+                        <p>
+                            Learn through worked examples and
+                            structured problem solving.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Exam preparation
+                        </h3>
+
+                        <p>
+                            Build the skills needed to approach tests
+                            and exams with confidence.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Student support
+                        </h3>
+
+                        <p>
+                            Receive guidance throughout your academic
+                            journey.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SUBJECTS
+===================================================== -->
+
+<section class="section subjects-section" id="subjects">
+
+    <div class="container">
+
+
+        <div class="section-heading center">
+
+            <span class="section-label">
+                WHAT I TEACH
+            </span>
+
+
+            <h2>
+
+                Subjects designed around
+
+                <span>
+                    your academic level.
+                </span>
+
+            </h2>
+
+
+            <p>
+                Choose the subject and level that matches your
+                current academic needs.
+            </p>
+
+        </div>
+
+
+
+        <div class="subjects-grid">
+
+
+            <!-- GRADE 11 MATHEMATICS -->
+
+            <article class="subject-card blue-card">
+
+                <div class="subject-number">
+                    01
+                </div>
+
+
+                <div class="subject-icon">
+                    ∑
+                </div>
+
+
+                <h3>
+                    Grade 11 Mathematics
+                </h3>
+
+
+                <p>
+
+                    Algebra, functions, trigonometry,
+                    analytical geometry, statistics,
+                    geometry and problem solving.
+
+                </p>
+
+
+                <a href="#booking">
+                    Book Mathematics →
+                </a>
+
+            </article>
+
+
+
+            <!-- GRADE 12 MATHEMATICS -->
+
+            <article class="subject-card red-card">
+
+                <div class="subject-number">
+                    02
+                </div>
+
+
+                <div class="subject-icon">
+                    π
+                </div>
+
+
+                <h3>
+                    Grade 12 Mathematics
+                </h3>
+
+
+                <p>
+
+                    Functions, calculus, trigonometry,
+                    analytical geometry, probability,
+                    statistics and exam preparation.
+
+                </p>
+
+
+                <a href="#booking">
+                    Book Mathematics →
+                </a>
+
+            </article>
+
+
+
+            <!-- GRADE 11 PHYSICS -->
+
+            <article class="subject-card dark-card">
+
+                <div class="subject-number">
+                    03
+                </div>
+
+
+                <div class="subject-icon">
+                    F
+                </div>
+
+
+                <h3>
+                    Grade 11 Physics
+                </h3>
+
+
+                <p>
+
+                    Mechanics, waves, energy, electricity,
+                    momentum and Physical Sciences
+                    problem solving.
+
+                </p>
+
+
+                <a href="#booking">
+                    Book Physics →
+                </a>
+
+            </article>
+
+
+
+            <!-- GRADE 12 PHYSICS -->
+
+            <article class="subject-card blue-card">
+
+                <div class="subject-number">
+                    04
+                </div>
+
+
+                <div class="subject-icon">
+                    ⚡
+                </div>
+
+
+                <h3>
+                    Grade 12 Physics
+                </h3>
+
+
+                <p>
+
+                    Mechanics, electricity, momentum,
+                    waves, electrodynamics and
+                    exam preparation.
+
+                </p>
+
+
+                <a href="#booking">
+                    Book Physics →
+                </a>
+
+            </article>
+
+
+
+            <!-- UNIVERSITY MATHEMATICS -->
+
+            <article class="subject-card red-card">
+
+                <div class="subject-number">
+                    05
+                </div>
+
+
+                <div class="subject-icon">
+                    ∞
+                </div>
+
+
+                <h3>
+                    University Mathematics
+                </h3>
+
+
+                <p>
+
+                    Calculus, linear algebra, statistics,
+                    probability, mathematical proofs
+                    and problem solving.
+
+                </p>
+
+
+                <a href="#booking">
+                    Book University Maths →
+                </a>
+
+            </article>
+
+
+
+            <!-- COMPUTER SCIENCE -->
+
+            <article class="subject-card dark-card">
+
+                <div class="subject-number">
+                    06
+                </div>
+
+
+                <div class="subject-icon">
+                    &lt;/&gt;
+                </div>
+
+
+                <h3>
+                    Computer Science
+                </h3>
+
+
+                <p>
+
+                    C++, Java, Python, Assembly,
+                    algorithms, programming fundamentals
+                    and coding support.
+
+                </p>
+
+
+                <a href="#booking">
+                    Book CS Support →
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY BONGX031
+===================================================== -->
+
+<section class="section why-section">
+
+    <div class="container">
+
+
+        <div class="why-box">
+
+
+            <div class="why-content">
+
+
+                <span class="section-label light">
+                    WHY BONGX031?
+                </span>
+
+
+                <h2>
+
+                    Your goal is not just to
+                    <span>
+                        finish the lesson.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    The goal is to leave the lesson understanding
+                    what you learned and knowing how to apply it
+                    yourself.
+
+                </p>
+
+
+                <a
+                    href="#booking"
+                    class="btn btn-white"
+                >
+                    Start Learning
+                </a>
+
+            </div>
+
+
+
+            <div class="why-points">
+
+
+                <div class="why-point">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Learn the idea behind the formula,
+                            method or concept.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="why-point">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Practise
+                        </h3>
+
+                        <p>
+                            Work through examples with guidance
+                            and feedback.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="why-point">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Improve
+                        </h3>
+
+                        <p>
+                            Identify weak areas and strengthen
+                            your academic skills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRICING
+===================================================== -->
+
+<section class="section pricing-section" id="pricing">
+
+    <div class="container">
+
+
+        <div class="section-heading center">
+
+            <span class="section-label">
+                SIMPLE PRICING
+            </span>
+
+
+            <h2>
+
+                Quality academic support
+
+                <span>
+                    without complicated pricing.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="pricing-grid">
+
+
+            <!-- SCHOOL TUTORING -->
+
+            <div class="price-card featured">
+
+
+                <div class="popular">
+                    MOST POPULAR
+                </div>
+
+
+                <span class="price-category">
+                    GRADE 11 & 12
+                </span>
+
+
+                <h3>
+                    School Tutoring
+                </h3>
+
+
+                <div class="price">
+
+                    R130
+
+                    <small>
+                        / month
+                    </small>
+
+                </div>
+
+
+                <p>
+                    Mathematics and Physics academic support.
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        ✓ Online lessons
+                    </li>
+
+                    <li>
+                        ✓ Concept explanations
+                    </li>
+
+                    <li>
+                        ✓ Worked examples
+                    </li>
+
+                    <li>
+                        ✓ Practice support
+                    </li>
+
+                    <li>
+                        ✓ Exam preparation
+                    </li>
+
+                </ul>
+
+
+                <a
+                    href="#booking"
+                    class="btn btn-primary full-width"
+                >
+                    Choose School Tutoring
+                </a>
+
+            </div>
+
+
+
+            <!-- UNIVERSITY -->
+
+            <div class="price-card">
+
+
+                <span class="price-category">
+                    UNIVERSITY
+                </span>
+
+
+                <h3>
+                    University Support
+                </h3>
+
+
+                <div class="price">
+
+                    R130
+
+                    <small>
+                        / session
+                    </small>
+
+                </div>
+
+
+                <p>
+                    University Mathematics and Computer Science
+                    academic assistance.
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        ✓ University Mathematics
+                    </li>
+
+                    <li>
+                        ✓ Statistics
+                    </li>
+
+                    <li>
+                        ✓ Linear Algebra
+                    </li>
+
+                    <li>
+                        ✓ Computer Science
+                    </li>
+
+                    <li>
+                        ✓ Test preparation
+                    </li>
+
+                </ul>
+
+
+                <a
+                    href="#booking"
+                    class="btn btn-outline full-width"
+                >
+                    Book University Support
+                </a>
+
+            </div>
+
+
+
+            <!-- BURSARY APPLICATION -->
+
+            <div class="price-card bursary-price">
+
+
+                <span class="price-category">
+                    STUDENT SUPPORT
+                </span>
+
+
+                <h3>
+                    Bursary Application
+                </h3>
+
+
+                <div class="price">
+
+                    <span class="contact-price">
+                        Assistance
+                    </span>
+
+                </div>
+
+
+                <p>
+
+                    Get guidance with finding, preparing
+                    and completing bursary applications.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        ✓ Find suitable opportunities
+                    </li>
+
+                    <li>
+                        ✓ Application guidance
+                    </li>
+
+                    <li>
+                        ✓ Document preparation
+                    </li>
+
+                    <li>
+                        ✓ Application review
+                    </li>
+
+                    <li>
+                        ✓ Submission guidance
+                    </li>
+
+                </ul>
+
+
+                <a
+                    href="#bursaries"
+                    class="btn btn-outline full-width"
+                >
+                    Get Bursary Assistance
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ONLINE RESOURCES
+===================================================== -->
+
+<section class="section resources-section" id="resources">
+
+    <div class="container">
+
+
+        <div class="section-heading center">
+
+            <span class="section-label">
+                ONLINE LEARNING
+            </span>
+
+
+            <h2>
+
+                Learn from wherever
+
+                <span>
+                    you are.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Online support makes it easier to attend lessons
+                without travelling to a physical tutoring centre.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="resource-grid">
+
+
+            <!-- GOOGLE MEET -->
+
+            <div class="resource-card meet-card">
+
+
+                <div class="platform-logo google-meet-logo">
+
+                    <span class="meet-shape"></span>
+
+                    <span class="meet-text">
+                        MEET
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Google Meet Lessons
+                </h3>
+
+
+                <p>
+
+                    Online tutoring sessions can be conducted
+                    through Google Meet. After booking, session
+                    arrangements can be confirmed through WhatsApp.
+
+                </p>
+
+
+                <a
+                    href="#booking"
+                    class="resource-link"
+                >
+                    Book an Online Lesson →
+                </a>
+
+            </div>
+
+
+
+            <!-- YOUTUBE -->
+
+            <div class="resource-card youtube-card">
+
+
+                <div class="platform-logo youtube-logo">
+
+                    <span class="youtube-play">
+                        ▶
+                    </span>
+
+                    <span class="youtube-text">
+                        YouTube
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Educational Resources
+                </h3>
+
+
+                <p>
+
+                    Follow BONGX031 for educational content,
+                    explanations, study guidance and additional
+                    learning resources.
+
+                </p>
+
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="resource-link"
+                >
+                    Visit YouTube →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section class="section process-section">
+
+    <div class="container">
+
+
+        <div class="section-heading center">
+
+            <span class="section-label">
+                HOW IT WORKS
+            </span>
+
+
+            <h2>
+
+                Getting started is
+
+                <span>
+                    simple.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="process-grid">
+
+
+            <div class="process-step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Choose
+                </h3>
+
+                <p>
+                    Select your subject or service.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Book
+                </h3>
+
+                <p>
+                    Complete the booking form.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Confirm
+                </h3>
+
+                <p>
+                    Your request is prepared for WhatsApp.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Learn
+                </h3>
+
+                <p>
+                    Attend your online lesson and start improving.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BURSARY APPLICATION
+===================================================== -->
+
+<section class="section bursary-section" id="bursaries">
+
+    <div class="container">
+
+
+        <div class="bursary-box">
+
+
+            <!-- LEFT -->
+
+            <div class="bursary-content">
+
+
+                <span class="section-label light">
+                    BURSARY APPLICATION ASSISTANCE
+                </span>
+
+
+                <h2>
+
+                    Need help
+
+                    <span>
+                        applying for a bursary?
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    BONGX031 helps students prepare and complete
+                    bursary applications by guiding them through
+                    application requirements, supporting documents
+                    and the application process.
+
+                </p>
+
+
+                <a
+                    href="#booking"
+                    class="btn btn-white"
+                >
+                    Apply for Bursary Assistance
+                </a>
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div class="bursary-services">
+
+
+                <!-- STEP 1 -->
+
+                <div>
+
+                    <strong>
+                        01
+                    </strong>
+
+
+                    <h3>
+                        Find a Bursary
+                    </h3>
+
+
+                    <p>
+
+                        Get guidance on identifying bursary
+                        opportunities that may be relevant
+                        to your studies.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- STEP 2 -->
+
+                <div>
+
+                    <strong>
+                        02
+                    </strong>
+
+
+                    <h3>
+                        Prepare Documents
+                    </h3>
+
+
+                    <p>
+
+                        Understand the documents and
+                        information required for your
+                        application.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- STEP 3 -->
+
+                <div>
+
+                    <strong>
+                        03
+                    </strong>
+
+
+                    <h3>
+                        Complete Application
+                    </h3>
+
+
+                    <p>
+
+                        Receive step-by-step assistance
+                        while completing the application.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- STEP 4 -->
+
+                <div>
+
+                    <strong>
+                        04
+                    </strong>
+
+
+                    <h3>
+                        Review Application
+                    </h3>
+
+
+                    <p>
+
+                        Check your application for missing
+                        information and document issues
+                        before submission.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- APPLICATION CTA -->
+
+        <div class="bursary-apply-box">
+
+
+            <div>
+
+                <span class="apply-icon">
+                    ✓
+                </span>
+
+
+                <div>
+
+                    <h3>
+                        Want help applying?
+                    </h3>
+
+
+                    <p>
+
+                        Send your details and tell BONGX031
+                        which bursary you need help with.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="#booking"
+                class="btn btn-primary"
             >
-                ×
-            </button>
+                Start Bursary Application
+            </a>
 
-        `;
+        </div>
 
 
-        document.body.appendChild(
-            notification
-        );
 
+        <!-- DISCLAIMER -->
 
-        requestAnimationFrame(function () {
+        <p class="bursary-note">
 
-            notification.classList.add(
-                "show"
-            );
+            <strong>
+                Important:
+            </strong>
 
-        });
+            BONGX031 provides bursary application guidance
+            and support. Final bursary decisions are made by
+            the relevant funding organisation.
 
+        </p>
 
-        const closeButton =
-            notification.querySelector(
-                ".notification-close"
-            );
+    </div>
 
+</section>
 
-        if (closeButton) {
 
-            closeButton.addEventListener(
-                "click",
-                function () {
 
-                    removeNotification(
-                        notification
-                    );
+<!-- =====================================================
+     FAQ
+===================================================== -->
 
-                }
-            );
+<section class="section faq-section" id="faq">
 
-        }
+    <div class="container faq-container">
 
 
-        setTimeout(function () {
+        <div class="section-heading center">
 
-            removeNotification(
-                notification
-            );
+            <span class="section-label">
+                FAQ
+            </span>
 
-        }, 5000);
 
-    }
+            <h2>
 
+                Frequently asked
 
-    /* =====================================================
-       15. REMOVE NOTIFICATION
-    ===================================================== */
+                <span>
+                    questions.
+                </span>
 
-    function removeNotification(
-        notification
-    ) {
+            </h2>
 
-        if (!notification) {
-            return;
-        }
+        </div>
 
 
-        notification.classList.remove(
-            "show"
-        );
 
+        <div class="faq-list">
 
-        setTimeout(function () {
 
-            notification.remove();
+            <!-- FAQ 1 -->
 
-        }, 300);
+            <details>
 
-    }
+                <summary>
 
+                    Do you offer online tutoring?
 
-    /* =====================================================
-       16. BACK TO TOP
-    ===================================================== */
+                    <span>
+                        +
+                    </span>
 
-    function updateBackToTop() {
+                </summary>
 
-        if (!backToTop) {
-            return;
-        }
 
+                <p>
 
-        if (window.scrollY > 500) {
+                    Yes. Tutoring is provided online,
+                    with Google Meet available for lessons.
 
-            backToTop.classList.add(
-                "show"
-            );
+                </p>
 
-        } else {
+            </details>
 
-            backToTop.classList.remove(
-                "show"
-            );
 
-        }
 
-    }
+            <!-- FAQ 2 -->
 
+            <details>
 
-    window.addEventListener(
-        "scroll",
-        updateBackToTop,
-        { passive: true }
-    );
+                <summary>
 
+                    Which school grades do you teach?
 
-    updateBackToTop();
+                    <span>
+                        +
+                    </span>
 
+                </summary>
 
-    if (backToTop) {
 
-        backToTop.addEventListener(
-            "click",
-            function () {
+                <p>
 
-                window.scrollTo({
+                    BONGX031 provides support for Grade 11
+                    and Grade 12 Mathematics and Physics.
 
-                    top: 0,
+                </p>
 
-                    behavior: "smooth"
+            </details>
 
-                });
 
-            }
-        );
 
-    }
+            <!-- FAQ 3 -->
 
+            <details>
 
-    /* =====================================================
-       17. SCROLL REVEAL ANIMATION
-    ===================================================== */
+                <summary>
 
-    const revealElements =
-        document.querySelectorAll(
-            ".subject-card, " +
-            ".price-card, " +
-            ".resource-card, " +
-            ".process-step, " +
-            ".feature, " +
-            ".bursary-apply-box"
-        );
+                    Do you offer university tutoring?
 
+                    <span>
+                        +
+                    </span>
 
-    revealElements.forEach(function (element) {
+                </summary>
 
-        element.classList.add(
-            "scroll-reveal"
-        );
 
-    });
+                <p>
 
+                    Yes. University Mathematics and Computer
+                    Science academic support are available.
 
-    if (
-        "IntersectionObserver" in window
-    ) {
+                </p>
 
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
+            </details>
 
-                    entries.forEach(
-                        function (entry) {
 
-                            if (
-                                entry.isIntersecting
-                            ) {
 
-                                entry.target.classList.add(
-                                    "revealed"
-                                );
+            <!-- FAQ 4 -->
 
-                                observer.unobserve(
-                                    entry.target
-                                );
+            <details>
 
-                            }
+                <summary>
 
-                        }
-                    );
+                    How much does school tutoring cost?
 
-                },
-                {
-                    threshold: 0.12
-                }
-            );
+                    <span>
+                        +
+                    </span>
 
+                </summary>
 
-        revealElements.forEach(
-            function (element) {
 
-                observer.observe(
-                    element
-                );
+                <p>
 
-            }
-        );
+                    The advertised school tutoring package
+                    is R130 per month.
 
-    } else {
+                </p>
 
-        revealElements.forEach(
-            function (element) {
+            </details>
 
-                element.classList.add(
-                    "revealed"
-                );
 
-            }
-        );
 
-    }
+            <!-- FAQ 5 -->
 
+            <details>
 
-    /* =====================================================
-       18. FAQ ACCORDION
-    ===================================================== */
+                <summary>
 
-    const faqItems =
-        document.querySelectorAll(
-            ".faq-list details"
-        );
+                    Can you help me apply for a bursary?
 
+                    <span>
+                        +
+                    </span>
 
-    faqItems.forEach(function (item) {
+                </summary>
 
-        item.addEventListener(
-            "toggle",
-            function () {
 
-                if (!item.open) {
-                    return;
-                }
+                <p>
 
+                    Yes. BONGX031 provides assistance with
+                    identifying opportunities, understanding
+                    requirements, preparing documents,
+                    completing applications and reviewing
+                    applications before submission.
 
-                faqItems.forEach(
-                    function (otherItem) {
+                </p>
 
-                        if (
-                            otherItem !== item &&
-                            otherItem.open
-                        ) {
+            </details>
 
-                            otherItem.open = false;
 
-                        }
 
-                    }
-                );
+            <!-- FAQ 6 -->
 
-            }
-        );
+            <details>
 
-    });
+                <summary>
 
+                    Can you guarantee bursary approval?
 
-    /* =====================================================
-       19. FORM INPUT IMPROVEMENT
-    ===================================================== */
+                    <span>
+                        +
+                    </span>
 
-    const formInputs =
-        document.querySelectorAll(
-            "#bookingForm input, " +
-            "#bookingForm select, " +
-            "#bookingForm textarea"
-        );
+                </summary>
 
 
-    formInputs.forEach(function (input) {
+                <p>
 
-        input.addEventListener(
-            "focus",
-            function () {
+                    No. BONGX031 provides application support
+                    and guidance. The final funding decision
+                    belongs to the relevant bursary organisation.
 
-                this.parentElement.classList.add(
-                    "input-focused"
-                );
+                </p>
 
-            }
-        );
+            </details>
 
 
-        input.addEventListener(
-            "blur",
-            function () {
 
-                this.parentElement.classList.remove(
-                    "input-focused"
-                );
+            <!-- FAQ 7 -->
 
-            }
-        );
+            <details>
 
-    });
+                <summary>
 
+                    How do I book?
 
-    /* =====================================================
-       20. PREVENT DOUBLE CLICK ON EXTERNAL BUTTONS
-    ===================================================== */
+                    <span>
+                        +
+                    </span>
 
-    const externalLinks =
-        document.querySelectorAll(
-            'a[target="_blank"]'
-        );
+                </summary>
 
 
-    externalLinks.forEach(function (link) {
+                <p>
 
-        link.addEventListener(
-            "click",
-            function () {
+                    Complete the booking form below. Your
+                    booking information will be prepared and
+                    sent to WhatsApp for confirmation.
 
-                this.setAttribute(
-                    "aria-busy",
-                    "true"
-                );
+                </p>
 
-            }
-        );
+            </details>
 
-    });
+        </div>
 
+    </div>
 
-    /* =====================================================
-       21. CONSOLE BRAND MESSAGE
-    ===================================================== */
+</section>
 
-    console.log(
-        "%c BONGX031 TUTORING ",
-        "background:#0756a8;color:white;font-size:16px;font-weight:bold;padding:8px;"
-    );
 
 
-    console.log(
-        "Mathematics • Physics • Computer Science • Bursary Application Assistance"
-    );
+<!-- =====================================================
+     BOOKING
+===================================================== -->
 
-});
+<section class="section booking-section" id="booking">
+
+    <div class="container booking-grid">
+
+
+        <!-- BOOKING INTRO -->
+
+        <div class="booking-intro">
+
+
+            <span class="section-label">
+                START HERE
+            </span>
+
+
+            <h2>
+
+                Ready to
+
+                <span>
+                    start learning?
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Complete the form and your request will be
+                prepared for WhatsApp. You can then confirm
+                the details directly.
+
+            </p>
+
+
+
+            <!-- CONTACT MINI -->
+
+            <div class="contact-mini">
+
+
+                <a href="tel:+27786701301">
+
+                    <strong>
+                        PHONE / WHATSAPP
+                    </strong>
+
+                    078 670 1301
+
+                </a>
+
+
+
+                <a href="mailto:bonganinkhensani@gmail.com">
+
+                    <strong>
+                        EMAIL
+                    </strong>
+
+                    bonganinkhensani@gmail.com
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOOKING FORM -->
+
+        <div class="booking-card">
+
+
+            <form id="bookingForm">
+
+
+                <!-- NAME + LEVEL -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="level">
+                            Grade / Level
+                        </label>
+
+
+                        <select
+                            id="level"
+                            name="level"
+                            required
+                        >
+
+                            <option value="">
+                                Select level
+                            </option>
+
+                            <option>
+                                Grade 11
+                            </option>
+
+                            <option>
+                                Grade 12
+                            </option>
+
+                            <option>
+                                University
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUBJECT + TOPIC -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject / Service
+                        </label>
+
+
+                        <select
+                            id="subject"
+                            name="subject"
+                            required
+                        >
+
+                            <option value="">
+                                Select subject or service
+                            </option>
+
+                            <option>
+                                Grade 11 Mathematics
+                            </option>
+
+                            <option>
+                                Grade 12 Mathematics
+                            </option>
+
+                            <option>
+                                Grade 11 Physics
+                            </option>
+
+                            <option>
+                                Grade 12 Physics
+                            </option>
+
+                            <option>
+                                University Mathematics
+                            </option>
+
+                            <option>
+                                Computer Science
+                            </option>
+
+                            <option>
+                                Bursary Application Assistance
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="topic">
+                            Topic / Module
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="topic"
+                            name="topic"
+                            placeholder="e.g. Calculus / NSFAS / Funza Lushaka"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DATE + TIME -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Preferred Date
+                        </label>
+
+
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="time">
+                            Preferred Time
+                        </label>
+
+
+                        <select
+                            id="time"
+                            name="time"
+                            required
+                        >
+
+                            <option value="">
+                                Select time
+                            </option>
+
+                            <option>
+                                08:00 - 10:00
+                            </option>
+
+                            <option>
+                                10:00 - 12:00
+                            </option>
+
+                            <option>
+                                12:00 - 14:00
+                            </option>
+
+                            <option>
+                                14:00 - 16:00
+                            </option>
+
+                            <option>
+                                16:00 - 18:00
+                            </option>
+
+                            <option>
+                                18:00 - 20:00
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Additional Message
+                    </label>
+
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        placeholder="Tell me what you need help with..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="btn btn-primary full-width booking-button"
+                >
+                    Send Booking Request on WhatsApp
+                </button>
+
+
+                <p class="form-note">
+
+                    Your request will open WhatsApp with
+                    your booking information already prepared.
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
+    <div class="container contact-grid">
+
+
+        <!-- CONTACT INTRO -->
+
+        <div>
+
+
+            <span class="section-label light">
+                CONTACT BONGX031
+            </span>
+
+
+            <h2>
+
+                Let's work on your
+
+                <span>
+                    academic goals.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Contact BONGX031 for tutoring,
+                academic support or bursary
+                application assistance.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- CONTACT DETAILS -->
+
+        <div class="contact-links">
+
+
+            <!-- PHONE -->
+
+            <a
+                href="tel:+27786701301"
+                class="contact-item"
+            >
+
+                <span class="contact-icon">
+                    ☎
+                </span>
+
+
+                <div>
+
+                    <small>
+                        CALL / WHATSAPP
+                    </small>
+
+                    <strong>
+                        078 670 1301
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- EMAIL -->
+
+            <a
+                href="mailto:bonganinkhensani@gmail.com"
+                class="contact-item"
+            >
+
+                <span class="contact-icon">
+                    ✉
+                </span>
+
+
+                <div>
+
+                    <small>
+                        EMAIL
+                    </small>
+
+                    <strong>
+                        bonganinkhensani@gmail.com
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- YOUTUBE -->
+
+            <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener"
+                class="contact-item"
+            >
+
+                <span class="contact-icon youtube-mini">
+                    ▶
+                </span>
+
+
+                <div>
+
+                    <small>
+                        YOUTUBE
+                    </small>
+
+                    <strong>
+                        BONGX031 Resources
+                    </strong>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- FOOTER BRAND -->
+
+        <div>
+
+
+            <a
+                href="#home"
+                class="footer-logo"
+            >
+                BONGX031
+            </a>
+
+
+            <p>
+
+                Mathematics • Physics • Computer Science
+
+            </p>
+
+
+            <p>
+
+                Online academic support for students who
+                want to understand more and achieve more.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div>
+
+
+            <h3>
+                Quick Links
+            </h3>
+
+
+            <a href="#about">
+                About
+            </a>
+
+
+            <a href="#subjects">
+                Subjects
+            </a>
+
+
+            <a href="#bursaries">
+                Bursary Applications
+            </a>
+
+
+            <a href="#pricing">
+                Pricing
+            </a>
+
+
+            <a href="#booking">
+                Book
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div>
+
+
+            <h3>
+                Contact
+            </h3>
+
+
+            <a href="tel:+27786701301">
+                078 670 1301
+            </a>
+
+
+            <a href="mailto:bonganinkhensani@gmail.com">
+                bonganinkhensani@gmail.com
+            </a>
+
+
+            <a
+                href="https://wa.me/27786701301"
+                target="_blank"
+                rel="noopener"
+            >
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+
+            <p>
+
+                ©
+                <span id="year"></span>
+                BONGX031 Tutoring.
+                All rights reserved.
+
+            </p>
+
+
+            <p>
+
+                Built for learning. Designed for progress.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
