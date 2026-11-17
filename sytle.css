@@ -1,6 +1,6 @@
 /* =========================================================
    BONGANI TUTORING
-   BLUE • WHITE • RED DESIGN
+   NAVY BLUE • BLUE • WHITE • RED DESIGN
 ========================================================= */
 
 
@@ -18,7 +18,7 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f8ff;
+    background: #071a3d;
     color: #14213d;
     line-height: 1.6;
 }
@@ -40,6 +40,8 @@ textarea {
 
 :root {
     --navy: #071a3d;
+    --navy-light: #0b285c;
+
     --blue-dark: #0b3d91;
     --blue: #1264e8;
     --blue-light: #eaf2ff;
@@ -49,17 +51,20 @@ textarea {
     --red-light: #fff0f1;
 
     --white: #ffffff;
+
     --text: #14213d;
     --muted: #667085;
 
     --border: #dfe6f1;
 
-    --shadow: 0 15px 40px rgba(7, 26, 61, 0.10);
-    --shadow-hover: 0 20px 50px rgba(7, 26, 61, 0.16);
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.22);
 }
 
 
-/* ================= NAVBAR ================= */
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar {
     position: sticky;
@@ -74,11 +79,11 @@ textarea {
 
     padding: 0 7%;
 
-    background: rgba(255, 255, 255, 0.97);
+    background: #ffffff;
 
-    border-bottom: 3px solid var(--blue);
+    border-bottom: 4px solid var(--red);
 
-    box-shadow: 0 5px 20px rgba(7, 26, 61, 0.06);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -188,7 +193,7 @@ textarea {
 }
 
 
-/* MOBILE MENU */
+/* MOBILE MENU BUTTON */
 
 .menu-button {
     display: none;
@@ -204,7 +209,9 @@ textarea {
 }
 
 
-/* ================= HERO ================= */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
     min-height: 680px;
@@ -225,14 +232,16 @@ textarea {
     background:
         linear-gradient(
             135deg,
-            #eaf2ff 0%,
-            #ffffff 48%,
-            #fff4f4 100%
+            #071a3d 0%,
+            #0b3d91 55%,
+            #071a3d 100%
         );
+
+    color: white;
 }
 
 
-/* Decorative background shapes */
+/* DECORATIVE BACKGROUND CIRCLES */
 
 .hero::before {
     content: "";
@@ -245,7 +254,7 @@ textarea {
     right: -150px;
     top: -150px;
 
-    background: rgba(18, 100, 232, 0.10);
+    background: rgba(18, 100, 232, 0.20);
 
     border-radius: 50%;
 }
@@ -261,7 +270,7 @@ textarea {
     left: -100px;
     bottom: -100px;
 
-    background: rgba(227, 27, 35, 0.08);
+    background: rgba(227, 27, 35, 0.16);
 
     border-radius: 50%;
 }
@@ -270,6 +279,7 @@ textarea {
     max-width: 650px;
 
     position: relative;
+
     z-index: 2;
 }
 
@@ -290,6 +300,7 @@ textarea {
     border-radius: 50px;
 
     font-size: 12px;
+
     font-weight: 800;
 
     text-transform: uppercase;
@@ -309,13 +320,13 @@ textarea {
 
     letter-spacing: -2px;
 
-    color: var(--navy);
+    color: #ffffff;
 }
 
 .hero h1 span {
     display: block;
 
-    color: var(--blue);
+    color: #4da3ff;
 
     position: relative;
 }
@@ -346,7 +357,7 @@ textarea {
 
     max-width: 600px;
 
-    color: #5f6c82;
+    color: #d8e2f2;
 
     font-size: 18px;
 }
@@ -374,26 +385,28 @@ textarea {
 }
 
 
-/* PRIMARY */
+/* PRIMARY BUTTON */
 
 .primary-button {
     background: var(--blue);
 
     color: white;
 
-    box-shadow: 0 8px 20px rgba(18, 100, 232, 0.25);
+    box-shadow:
+        0 8px 20px rgba(18, 100, 232, 0.35);
 }
 
 .primary-button:hover {
-    background: var(--blue-dark);
+    background: #0b3d91;
 
     transform: translateY(-3px);
 
-    box-shadow: 0 12px 28px rgba(18, 100, 232, 0.35);
+    box-shadow:
+        0 12px 28px rgba(18, 100, 232, 0.45);
 }
 
 
-/* SECONDARY */
+/* SECONDARY BUTTON */
 
 .secondary-button {
     border: 2px solid var(--red);
@@ -412,12 +425,15 @@ textarea {
 }
 
 
-/* ================= HERO CARD ================= */
+/* =========================================================
+   HERO CARD
+========================================================= */
 
 .hero-card {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     position: relative;
@@ -436,18 +452,18 @@ textarea {
     background:
         linear-gradient(
             145deg,
-            #071a3d,
-            #0b3d91
+            #ffffff,
+            #eaf2ff
         );
 
-    color: white;
+    color: var(--navy);
 
     border-radius: 25px;
 
-    border: 2px solid rgba(255, 255, 255, 0.15);
+    border: 3px solid rgba(255, 255, 255, 0.8);
 
     box-shadow:
-        0 30px 70px rgba(7, 26, 61, 0.30);
+        0 30px 70px rgba(0, 0, 0, 0.35);
 
     transform: rotate(2deg);
 
@@ -458,7 +474,7 @@ textarea {
     transform: rotate(0deg) translateY(-10px);
 
     box-shadow:
-        0 35px 80px rgba(7, 26, 61, 0.35);
+        0 35px 80px rgba(0, 0, 0, 0.40);
 }
 
 
@@ -469,6 +485,7 @@ textarea {
     height: 65px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -488,12 +505,14 @@ textarea {
 
 .floating-card h3 {
     font-size: 28px;
+
+    color: var(--navy);
 }
 
 .floating-card p {
     margin-top: 15px;
 
-    color: #d8e2f2;
+    color: #52627b;
 }
 
 .mini-line {
@@ -501,22 +520,25 @@ textarea {
 
     margin: 30px 0;
 
-    background: rgba(255, 255, 255, 0.15);
+    background: #cbd5e1;
 }
 
 .lesson-info {
     display: flex;
+
     flex-direction: column;
 }
 
 .lesson-info span {
-    color: #b9c8df;
+    color: #52627b;
 
     font-size: 13px;
 }
 
 
-/* ================= STATS ================= */
+/* =========================================================
+   STATS
+========================================================= */
 
 .stats {
     display: grid;
@@ -525,11 +547,12 @@ textarea {
 
     padding: 38px 8%;
 
-    background: white;
+    background: #ffffff;
 
     border-bottom: 1px solid var(--border);
 
-    box-shadow: 0 5px 20px rgba(7, 26, 61, 0.04);
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 .stat {
@@ -564,10 +587,19 @@ textarea {
 }
 
 
-/* ================= SECTIONS ================= */
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
 .section {
     padding: 105px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071a3d 0%,
+            #0b285c 100%
+        );
 }
 
 .section-heading {
@@ -585,17 +617,19 @@ textarea {
 
     letter-spacing: -1px;
 
-    color: var(--navy);
+    color: #ffffff;
 }
 
 .section-heading p {
     margin-top: 12px;
 
-    color: #6b7280;
+    color: #d8e2f2;
 }
 
 
-/* ================= SUBJECTS ================= */
+/* =========================================================
+   SUBJECTS
+========================================================= */
 
 .subject-grid {
     display: grid;
@@ -610,9 +644,9 @@ textarea {
 
     padding: 30px;
 
-    background: white;
+    background: #ffffff;
 
-    border: 1px solid var(--border);
+    border: 1px solid #dfe6f1;
 
     border-radius: 16px;
 
@@ -633,7 +667,7 @@ textarea {
     left: 0;
 
     width: 100%;
-    height: 4px;
+    height: 5px;
 
     background: var(--blue);
 }
@@ -647,7 +681,8 @@ textarea {
 
     border-color: #b8cdf2;
 
-    box-shadow: var(--shadow-hover);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
 }
 
 
@@ -658,6 +693,7 @@ textarea {
     height: 52px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -707,7 +743,9 @@ textarea {
 }
 
 
-/* ================= PRICING ================= */
+/* =========================================================
+   PRICING
+========================================================= */
 
 .pricing-section {
     position: relative;
@@ -715,9 +753,9 @@ textarea {
     background:
         linear-gradient(
             135deg,
-            #edf4ff,
-            #ffffff 50%,
-            #fff2f2
+            #071a3d 0%,
+            #0b3d91 55%,
+            #071a3d 100%
         );
 }
 
@@ -738,7 +776,7 @@ textarea {
 
     padding: 38px 30px;
 
-    background: white;
+    background: #ffffff;
 
     border: 1px solid var(--border);
 
@@ -746,7 +784,8 @@ textarea {
 
     text-align: center;
 
-    box-shadow: 0 8px 30px rgba(7, 26, 61, 0.05);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.20);
 
     transition: 0.3s;
 }
@@ -754,7 +793,8 @@ textarea {
 .price-card:hover {
     transform: translateY(-7px);
 
-    box-shadow: var(--shadow-hover);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
 }
 
 .price-card.featured {
@@ -763,7 +803,7 @@ textarea {
     transform: scale(1.04);
 
     box-shadow:
-        0 20px 50px rgba(18, 100, 232, 0.18);
+        0 20px 50px rgba(18, 100, 232, 0.30);
 }
 
 .price-card.featured:hover {
@@ -795,7 +835,8 @@ textarea {
 
     text-transform: uppercase;
 
-    box-shadow: 0 6px 15px rgba(227, 27, 35, 0.25);
+    box-shadow:
+        0 6px 15px rgba(227, 27, 35, 0.30);
 }
 
 .price-card h3 {
@@ -863,7 +904,9 @@ textarea {
 }
 
 
-/* ================= STEPS ================= */
+/* =========================================================
+   STEPS
+========================================================= */
 
 .steps {
     display: grid;
@@ -877,6 +920,10 @@ textarea {
     text-align: center;
 
     padding: 20px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border-radius: 15px;
 }
 
 .step-number {
@@ -884,6 +931,7 @@ textarea {
     height: 58px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -899,31 +947,35 @@ textarea {
 
     font-weight: 900;
 
-    box-shadow: 0 8px 20px rgba(18, 100, 232, 0.25);
+    box-shadow:
+        0 8px 20px rgba(18, 100, 232, 0.35);
 }
 
 .step:nth-child(even) .step-number {
     background: var(--red);
 
-    box-shadow: 0 8px 20px rgba(227, 27, 35, 0.25);
+    box-shadow:
+        0 8px 20px rgba(227, 27, 35, 0.35);
 }
 
 .step h3 {
     font-size: 18px;
 
-    color: var(--navy);
+    color: #ffffff;
 }
 
 .step p {
     margin-top: 8px;
 
-    color: #6b7280;
+    color: #d8e2f2;
 
     font-size: 14px;
 }
 
 
-/* ================= BOOKING ================= */
+/* =========================================================
+   BOOKING
+========================================================= */
 
 .booking-section {
     padding: 105px 8%;
@@ -931,9 +983,9 @@ textarea {
     background:
         linear-gradient(
             135deg,
-            #071a3d 0%,
-            #0b3d91 65%,
-            #b91c1c 140%
+            #050f24 0%,
+            #071a3d 55%,
+            #0b3d91 100%
         );
 
     color: white;
@@ -1003,18 +1055,21 @@ textarea {
 }
 
 
-/* FORM */
+/* =========================================================
+   FORM
+========================================================= */
 
 form {
     padding: 32px;
 
-    background: white;
+    background: #ffffff;
 
     color: var(--text);
 
     border-radius: 18px;
 
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
 }
 
 .form-row {
@@ -1110,12 +1165,19 @@ textarea {
 }
 
 
-/* ================= CONTACT ================= */
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact-section {
     padding: 105px 8%;
 
-    background: #f7f9fd;
+    background:
+        linear-gradient(
+            135deg,
+            #071a3d 0%,
+            #0b285c 100%
+        );
 }
 
 .contact-card {
@@ -1137,7 +1199,7 @@ textarea {
 
     padding: 25px;
 
-    background: white;
+    background: #ffffff;
 
     border: 1px solid var(--border);
 
@@ -1149,7 +1211,8 @@ textarea {
 .contact-item:hover {
     transform: translateY(-5px);
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .contact-icon {
@@ -1159,6 +1222,7 @@ textarea {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1192,12 +1256,14 @@ textarea {
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
     padding: 50px 8%;
 
-    background: #050f24;
+    background: #030b1c;
 
     color: white;
 
@@ -1227,7 +1293,9 @@ footer p {
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -1246,15 +1314,16 @@ footer p {
 
         padding: 25px;
 
-        background: white;
+        background: #ffffff;
 
         flex-direction: column;
 
         gap: 20px;
 
-        border-bottom: 3px solid var(--blue);
+        border-bottom: 3px solid var(--red);
 
-        box-shadow: 0 15px 30px rgba(7, 26, 61, 0.10);
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.20);
     }
 
     .navbar nav.active {
@@ -1353,6 +1422,10 @@ footer p {
         min-height: 68px;
     }
 
+    .navbar nav {
+        top: 68px;
+    }
+
     .hero {
         padding: 65px 6%;
     }
@@ -1372,6 +1445,7 @@ footer p {
     .primary-button,
     .secondary-button {
         width: 100%;
+
         text-align: center;
     }
 
