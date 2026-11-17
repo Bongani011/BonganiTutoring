@@ -3,79 +3,98 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Bongani Tutoring - Online Mathematics, Physics and Computer Science tutoring for Grade 11, Grade 12 and university students.">
+    <meta
+        name="description"
+        content="BONGX031 Tutoring provides online Mathematics, Physics and Computer Science tutoring for Grade 11, Grade 12 and university students."
+    >
 
-    <meta name="keywords"
-        content="Bongani Tutoring, Mathematics Tutor, Physics Tutor, Grade 12 Mathematics, Grade 11 Mathematics, Computer Science, University Tutor">
+    <meta
+        name="keywords"
+        content="BONGX031, tutoring, mathematics tutor, physics tutor, Grade 12 mathematics, Grade 11 mathematics, university mathematics, computer science, bursary applications"
+    >
 
-    <meta name="author" content="Bongani Tutoring">
+    <meta name="author" content="BONGX031 Tutoring">
 
-    <title>Bongani Tutoring | Mathematics, Physics & Computer Science</title>
+    <title>BONGX031 | Mathematics, Physics & Computer Science</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
-<header class="navbar" id="navbar">
+<header class="header" id="header">
 
-    <div class="nav-container">
+    <div class="container nav-container">
 
         <a href="#home" class="logo">
-            <span class="logo-main">BONGANI</span>
+
+            <span class="logo-main">BONGX031</span>
+
             <span class="logo-sub">TUTORING</span>
+
         </a>
 
-        <button class="menu-button" id="menuButton" aria-label="Open navigation menu">
+        <button
+            class="menu-toggle"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
             ☰
         </button>
 
-        <nav id="navMenu">
+        <nav class="nav" id="navMenu">
 
             <a href="#home">Home</a>
+
             <a href="#about">About</a>
+
             <a href="#subjects">Subjects</a>
+
+            <a href="#bursaries">Bursaries</a>
+
             <a href="#pricing">Pricing</a>
-            <a href="#how">How It Works</a>
-            <a href="#booking">Book</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#resources">Resources</a>
+
+            <a href="#faq">FAQ</a>
+
+            <a href="#booking" class="nav-book">Book Now</a>
 
         </nav>
-
-        <a href="#booking" class="nav-cta">
-            Book a Session
-        </a>
 
     </div>
 
 </header>
 
 
-<!-- =========================================================
+<!-- =========================
      HERO
-========================================================= -->
+========================= -->
 
 <main>
 
 <section class="hero" id="home">
 
-    <div class="hero-background"></div>
+    <div class="hero-shape shape-one"></div>
+    <div class="hero-shape shape-two"></div>
 
-    <div class="hero-container">
+    <div class="container hero-grid">
 
         <div class="hero-content">
 
-            <div class="online-badge">
-                <span class="status-dot"></span>
-                ONLINE TUTORING AVAILABLE
+            <div class="hero-badge">
+                ONLINE ACADEMIC SUPPORT
             </div>
+
+            <p class="brand-label">BONGX031</p>
 
             <h1>
                 Learn Better.
@@ -83,38 +102,43 @@
                 Achieve More.
             </h1>
 
-            <p class="hero-description">
-                Professional online tutoring in Mathematics, Physics
-                and Computer Science for Grade 11, Grade 12 and university students.
+            <p class="hero-text">
+                Professional online tutoring in Mathematics, Physics and
+                Computer Science for Grade 11, Grade 12 and university students.
             </p>
 
             <div class="hero-buttons">
 
-                <a href="#booking" class="primary-button">
+                <a href="#booking" class="btn btn-primary">
                     Book a Session
                 </a>
 
-                <a href="#subjects" class="secondary-button">
-                    View Subjects
+                <a
+                    href="https://wa.me/27786701301"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp"
+                >
+                    WhatsApp Me
                 </a>
 
             </div>
 
-            <div class="hero-features">
+            <div class="hero-trust">
 
                 <div>
-                    <strong>✓</strong>
-                    Online Classes
+                    <strong>R130</strong>
+                    <span>School tutoring / month</span>
                 </div>
 
                 <div>
-                    <strong>✓</strong>
-                    Google Meet
+                    <strong>Online</strong>
+                    <span>Google Meet sessions</span>
                 </div>
 
                 <div>
-                    <strong>✓</strong>
-                    Personal Support
+                    <strong>Academic</strong>
+                    <span>Focused support</span>
                 </div>
 
             </div>
@@ -122,38 +146,52 @@
         </div>
 
 
-        <!-- Tutor card -->
+        <div class="hero-profile">
 
-        <div class="hero-tutor-card">
+            <div class="profile-card">
 
-            <div class="photo-container">
+                <div class="profile-image-wrapper">
 
-                <img src="bongani.jpg"
-                     alt="Bongani - Bongani Tutoring tutor"
-                     class="tutor-photo">
+                    <img
+                        src="bongani.jpg"
+                        alt="BONGX031 tutor"
+                        class="profile-image"
+                        id="profileImage"
+                    >
 
-                <div class="photo-placeholder">
-                    <span>YOUR PHOTO</span>
-                    <small>Replace bongani.jpg</small>
+                    <div class="image-fallback" id="imageFallback">
+                        B
+                    </div>
+
+                    <div class="online-status">
+                        <span></span>
+                        Online tutoring
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="profile-info">
 
-            <div class="tutor-card-content">
+                    <p class="small-label">
+                        YOUR TUTOR
+                    </p>
 
-                <span class="tutor-label">
-                    YOUR ONLINE TUTOR
-                </span>
+                    <h2>
+                        BONGX031
+                    </h2>
 
-                <h2>Bongani</h2>
+                    <p>
+                        Mathematics • Physics • Computer Science
+                    </p>
 
-                <p>
-                    Mathematics • Physics • Computer Science
-                </p>
+                    <div class="profile-tags">
 
-                <div class="tutor-status">
-                    <span class="status-dot"></span>
-                    Available for online tutoring
+                        <span>Grade 11</span>
+                        <span>Grade 12</span>
+                        <span>University</span>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -165,32 +203,32 @@
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      STATS
-========================================================= -->
+========================= -->
 
 <section class="stats-section">
 
-    <div class="stats-container">
+    <div class="container stats-grid">
 
         <div class="stat">
-            <h2>3+</h2>
-            <p>Academic Areas</p>
+            <strong>R130</strong>
+            <span>School tutoring / month</span>
         </div>
 
         <div class="stat">
-            <h2>11–12</h2>
-            <p>School Grades</p>
+            <strong>R130</strong>
+            <span>University support / session</span>
         </div>
 
         <div class="stat">
-            <h2>100%</h2>
-            <p>Online Support</p>
+            <strong>100%</strong>
+            <span>Online convenience</span>
         </div>
 
         <div class="stat">
-            <h2>R130</h2>
-            <p>School Subjects / Month</p>
+            <strong>1-on-1</strong>
+            <span>Focused learning</span>
         </div>
 
     </div>
@@ -198,99 +236,64 @@
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      ABOUT
-========================================================= -->
+========================= -->
 
 <section class="section about-section" id="about">
 
-    <div class="section-container">
+    <div class="container about-grid">
 
         <div class="section-heading">
 
-            <span class="section-tag">
-                ABOUT BONGANI TUTORING
+            <span class="section-label">
+                ABOUT BONGX031
             </span>
 
             <h2>
-                Education That Focuses on
-                <span>Understanding</span>
+                More than just tutoring.
+                <span>Real understanding.</span>
             </h2>
-
-            <p>
-                Bongani Tutoring provides structured online academic support
-                designed to help students understand difficult concepts,
-                improve problem-solving skills and prepare confidently for tests
-                and examinations.
-            </p>
 
         </div>
 
+        <div class="about-content">
 
-        <div class="about-grid">
+            <p>
+                BONGX031 provides structured online academic support designed
+                to help students understand difficult concepts, practise
+                effectively and become more confident in their studies.
+            </p>
 
-            <div class="about-text">
+            <p>
+                Lessons focus on explanation, worked examples, problem-solving
+                and exam preparation rather than simply memorising answers.
+            </p>
 
-                <h3>
-                    More Than Just Memorising
-                </h3>
+            <div class="about-features">
 
-                <p>
-                    The goal is not simply to give students answers.
-                    Lessons focus on understanding the methods behind the answers
-                    so that students can solve similar problems independently.
-                </p>
-
-                <p>
-                    Whether you are preparing for a Grade 11 or Grade 12
-                    examination, working through university mathematics,
-                    studying physics or learning computer science,
-                    the lessons are structured around your academic needs.
-                </p>
-
-                <a href="#booking" class="primary-button">
-                    Start Learning
-                </a>
-
-            </div>
-
-
-            <div class="about-cards">
-
-                <div class="info-card">
-                    <div class="info-icon">01</div>
-
-                    <h3>Understand</h3>
-
-                    <p>
-                        Concepts are explained clearly before moving to difficult
-                        applications.
-                    </p>
-
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Clear explanations</h3>
+                        <p>Complex topics are broken down into manageable steps.</p>
+                    </div>
                 </div>
 
-
-                <div class="info-card">
-                    <div class="info-icon">02</div>
-
-                    <h3>Practise</h3>
-
-                    <p>
-                        Work through examples and problems to develop confidence.
-                    </p>
-
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Practical practice</h3>
+                        <p>Learn through examples and structured problem solving.</p>
+                    </div>
                 </div>
 
-
-                <div class="info-card">
-                    <div class="info-icon">03</div>
-
-                    <h3>Improve</h3>
-
-                    <p>
-                        Identify weak areas and focus preparation where it matters.
-                    </p>
-
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Exam preparation</h3>
+                        <p>Build the skills needed to approach tests and exams confidently.</p>
+                    </div>
                 </div>
 
             </div>
@@ -302,37 +305,37 @@
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      SUBJECTS
-========================================================= -->
+========================= -->
 
 <section class="section subjects-section" id="subjects">
 
-    <div class="section-container">
+    <div class="container">
 
-        <div class="section-heading centered">
+        <div class="section-heading center">
 
-            <span class="section-tag">
+            <span class="section-label">
                 WHAT I TEACH
             </span>
 
             <h2>
-                Choose Your <span>Subject</span>
+                Subjects designed around
+                <span>your academic level.</span>
             </h2>
 
             <p>
-                Online tutoring for school and university students.
+                Choose the subject and level that matches your current needs.
             </p>
 
         </div>
 
 
-        <div class="subject-grid">
+        <div class="subjects-grid">
 
+            <!-- Grade 11 Maths -->
 
-            <!-- Grade 11 Mathematics -->
-
-            <article class="subject-card mathematics-card">
+            <article class="subject-card blue-card">
 
                 <div class="subject-number">
                     01
@@ -347,29 +350,20 @@
                 </h3>
 
                 <p>
-                    Build strong mathematical foundations and improve
-                    problem-solving skills.
+                    Build strong foundations in algebra, functions,
+                    trigonometry, geometry, statistics and more.
                 </p>
 
-                <ul>
-                    <li>Algebra</li>
-                    <li>Functions</li>
-                    <li>Trigonometry</li>
-                    <li>Analytical Geometry</li>
-                    <li>Statistics</li>
-                    <li>Geometry</li>
-                </ul>
-
-                <a href="#booking" class="subject-link">
+                <a href="#booking">
                     Book Mathematics →
                 </a>
 
             </article>
 
 
-            <!-- Grade 12 Mathematics -->
+            <!-- Grade 12 Maths -->
 
-            <article class="subject-card mathematics-card featured-subject">
+            <article class="subject-card red-card">
 
                 <div class="subject-number">
                     02
@@ -379,28 +373,16 @@
                     π
                 </div>
 
-                <div class="popular-badge">
-                    POPULAR
-                </div>
-
                 <h3>
                     Grade 12 Mathematics
                 </h3>
 
                 <p>
-                    Examination-focused support for Grade 12 Mathematics.
+                    Matric-focused support, revision, problem solving,
+                    past-paper practice and exam preparation.
                 </p>
 
-                <ul>
-                    <li>Functions</li>
-                    <li>Calculus</li>
-                    <li>Trigonometry</li>
-                    <li>Analytical Geometry</li>
-                    <li>Probability</li>
-                    <li>Statistics</li>
-                </ul>
-
-                <a href="#booking" class="subject-link">
+                <a href="#booking">
                     Book Mathematics →
                 </a>
 
@@ -409,7 +391,7 @@
 
             <!-- Grade 11 Physics -->
 
-            <article class="subject-card physics-card">
+            <article class="subject-card dark-card">
 
                 <div class="subject-number">
                     03
@@ -424,20 +406,11 @@
                 </h3>
 
                 <p>
-                    Understand physics principles and learn how to approach
-                    calculations systematically.
+                    Understand mechanics, waves, electricity and other
+                    important Physical Sciences concepts.
                 </p>
 
-                <ul>
-                    <li>Mechanics</li>
-                    <li>Waves</li>
-                    <li>Energy</li>
-                    <li>Electricity</li>
-                    <li>Momentum</li>
-                    <li>Problem Solving</li>
-                </ul>
-
-                <a href="#booking" class="subject-link">
+                <a href="#booking">
                     Book Physics →
                 </a>
 
@@ -446,7 +419,7 @@
 
             <!-- Grade 12 Physics -->
 
-            <article class="subject-card physics-card featured-subject">
+            <article class="subject-card blue-card">
 
                 <div class="subject-number">
                     04
@@ -456,28 +429,16 @@
                     ⚡
                 </div>
 
-                <div class="popular-badge">
-                    EXAM PREP
-                </div>
-
                 <h3>
                     Grade 12 Physics
                 </h3>
 
                 <p>
-                    Exam preparation and concept-based Physics tutoring.
+                    Strengthen your understanding of mechanics, electricity,
+                    magnetism, waves and exam-style questions.
                 </p>
 
-                <ul>
-                    <li>Mechanics</li>
-                    <li>Electricity</li>
-                    <li>Momentum</li>
-                    <li>Waves</li>
-                    <li>Electrodynamics</li>
-                    <li>Exam Preparation</li>
-                </ul>
-
-                <a href="#booking" class="subject-link">
+                <a href="#booking">
                     Book Physics →
                 </a>
 
@@ -486,14 +447,14 @@
 
             <!-- University Mathematics -->
 
-            <article class="subject-card university-card">
+            <article class="subject-card red-card">
 
                 <div class="subject-number">
                     05
                 </div>
 
                 <div class="subject-icon">
-                    ∫
+                    ∞
                 </div>
 
                 <h3>
@@ -501,20 +462,11 @@
                 </h3>
 
                 <p>
-                    Support for university-level mathematics and mathematical
-                    sciences.
+                    Support with university-level mathematics, proofs,
+                    linear algebra, statistics and problem solving.
                 </p>
 
-                <ul>
-                    <li>Calculus</li>
-                    <li>Linear Algebra</li>
-                    <li>Statistics</li>
-                    <li>Probability</li>
-                    <li>Proofs</li>
-                    <li>Problem Solving</li>
-                </ul>
-
-                <a href="#booking" class="subject-link">
+                <a href="#booking">
                     Book University Maths →
                 </a>
 
@@ -523,7 +475,7 @@
 
             <!-- Computer Science -->
 
-            <article class="subject-card computer-card">
+            <article class="subject-card dark-card">
 
                 <div class="subject-number">
                     06
@@ -538,20 +490,12 @@
                 </h3>
 
                 <p>
-                    Programming and computer science support for university students.
+                    Programming, algorithms, computer science concepts,
+                    coding practice and academic support.
                 </p>
 
-                <ul>
-                    <li>C++</li>
-                    <li>Java</li>
-                    <li>Python</li>
-                    <li>Assembly</li>
-                    <li>Algorithms</li>
-                    <li>Programming Fundamentals</li>
-                </ul>
-
-                <a href="#booking" class="subject-link">
-                    Book Computer Science →
+                <a href="#booking">
+                    Book CS Support →
                 </a>
 
             </article>
@@ -563,72 +507,133 @@
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
+     WHY CHOOSE BONGX031
+========================= -->
+
+<section class="section why-section">
+
+    <div class="container">
+
+        <div class="why-box">
+
+            <div class="why-content">
+
+                <span class="section-label light">
+                    WHY BONGX031?
+                </span>
+
+                <h2>
+                    Your goal is not just to
+                    <span>finish the lesson.</span>
+                </h2>
+
+                <p>
+                    The goal is to leave the lesson understanding what you
+                    learned and knowing how to apply it yourself.
+                </p>
+
+                <a href="#booking" class="btn btn-white">
+                    Start Learning
+                </a>
+
+            </div>
+
+
+            <div class="why-points">
+
+                <div class="why-point">
+                    <span>01</span>
+                    <div>
+                        <h3>Understand</h3>
+                        <p>Learn the idea behind the formula or method.</p>
+                    </div>
+                </div>
+
+                <div class="why-point">
+                    <span>02</span>
+                    <div>
+                        <h3>Practise</h3>
+                        <p>Work through examples with guidance.</p>
+                    </div>
+                </div>
+
+                <div class="why-point">
+                    <span>03</span>
+                    <div>
+                        <h3>Improve</h3>
+                        <p>Identify weak areas and strengthen them.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
      PRICING
-========================================================= -->
+========================= -->
 
 <section class="section pricing-section" id="pricing">
 
-    <div class="section-container">
+    <div class="container">
 
-        <div class="section-heading centered">
+        <div class="section-heading center">
 
-            <span class="section-tag">
+            <span class="section-label">
                 SIMPLE PRICING
             </span>
 
             <h2>
-                Affordable <span>Online Tutoring</span>
+                Quality academic support
+                <span>without complicated pricing.</span>
             </h2>
-
-            <p>
-                Start learning without complicated pricing.
-            </p>
 
         </div>
 
 
         <div class="pricing-grid">
 
-
             <!-- School -->
 
-            <div class="price-card">
+            <div class="price-card featured">
 
-                <div class="price-top">
-
-                    <span class="price-label">
-                        SCHOOL
-                    </span>
-
-                    <h3>
-                        Grade 11 & 12
-                    </h3>
-
+                <div class="popular">
+                    MOST POPULAR
                 </div>
 
+                <span class="price-category">
+                    GRADE 11 & 12
+                </span>
+
+                <h3>
+                    School Tutoring
+                </h3>
+
                 <div class="price">
-                    <span>R</span>130
+                    R130
                     <small>/ month</small>
                 </div>
 
-                <p class="price-description">
-                    Mathematics and Physics online tutoring.
+                <p>
+                    Mathematics and Physics academic support.
                 </p>
 
-                <ul class="price-list">
-
+                <ul>
                     <li>✓ Online lessons</li>
-                    <li>✓ Google Meet</li>
-                    <li>✓ Mathematics</li>
-                    <li>✓ Physics</li>
+                    <li>✓ Concept explanations</li>
+                    <li>✓ Worked examples</li>
+                    <li>✓ Practice support</li>
                     <li>✓ Exam preparation</li>
-                    <li>✓ Academic support</li>
-
                 </ul>
 
-                <a href="#booking" class="price-button">
-                    Get Started
+                <a href="#booking" class="btn btn-primary full-width">
+                    Choose School Tutoring
                 </a>
 
             </div>
@@ -636,84 +641,73 @@
 
             <!-- University -->
 
-            <div class="price-card featured-price">
+            <div class="price-card">
 
-                <div class="price-top">
+                <span class="price-category">
+                    UNIVERSITY
+                </span>
 
-                    <span class="price-label">
-                        UNIVERSITY
-                    </span>
-
-                    <h3>
-                        University Support
-                    </h3>
-
-                </div>
+                <h3>
+                    University Support
+                </h3>
 
                 <div class="price">
-                    <span>R</span>130
+                    R130
                     <small>/ session</small>
                 </div>
 
-                <p class="price-description">
-                    Mathematics and Computer Science tutoring.
+                <p>
+                    Mathematics and Computer Science academic assistance.
                 </p>
 
-                <ul class="price-list">
-
-                    <li>✓ Mathematics</li>
-                    <li>✓ Statistics</li>
-                    <li>✓ Linear Algebra</li>
+                <ul>
+                    <li>✓ University Mathematics</li>
                     <li>✓ Computer Science</li>
-                    <li>✓ Programming</li>
+                    <li>✓ Problem solving</li>
+                    <li>✓ Proof assistance</li>
                     <li>✓ Test preparation</li>
-
                 </ul>
 
-                <a href="#booking" class="price-button">
-                    Book a Session
+                <a href="#booking" class="btn btn-outline full-width">
+                    Book University Support
                 </a>
 
             </div>
 
 
-            <!-- Online -->
+            <!-- Bursary -->
 
-            <div class="price-card">
+            <div class="price-card bursary-price">
 
-                <div class="price-top">
+                <span class="price-category">
+                    STUDENT SUPPORT
+                </span>
 
-                    <span class="price-label">
-                        ONLINE
+                <h3>
+                    Bursary Assistance
+                </h3>
+
+                <div class="price">
+                    <span class="contact-price">
+                        Contact
                     </span>
-
-                    <h3>
-                        Google Meet
-                    </h3>
-
                 </div>
 
-                <div class="price-icon">
-                    ▶
-                </div>
-
-                <p class="price-description">
-                    Learn from wherever you are using online lessons.
+                <p>
+                    Guidance with bursary applications and supporting
+                    documentation.
                 </p>
 
-                <ul class="price-list">
-
-                    <li>✓ Google Meet lessons</li>
-                    <li>✓ Flexible scheduling</li>
-                    <li>✓ Screen sharing</li>
-                    <li>✓ Online explanations</li>
-                    <li>✓ Problem solving</li>
-                    <li>✓ Direct support</li>
-
+                <ul>
+                    <li>✓ Bursary opportunity guidance</li>
+                    <li>✓ Document checklist</li>
+                    <li>✓ Application guidance</li>
+                    <li>✓ Application review</li>
+                    <li>✓ Student support</li>
                 </ul>
 
-                <a href="#booking" class="price-button">
-                    Book Online
+                <a href="#bursaries" class="btn btn-outline full-width">
+                    Learn About Bursaries
                 </a>
 
             </div>
@@ -725,92 +719,99 @@
 </section>
 
 
-<!-- =========================================================
-     GOOGLE MEET + YOUTUBE
-========================================================= -->
+<!-- =========================
+     GOOGLE MEET / YOUTUBE
+========================= -->
 
-<section class="section platforms-section">
+<section class="section resources-section" id="resources">
 
-    <div class="section-container">
+    <div class="container">
 
-        <div class="section-heading centered">
+        <div class="section-heading center">
 
-            <span class="section-tag">
-                LEARN ONLINE
+            <span class="section-label">
+                ONLINE LEARNING
             </span>
 
             <h2>
-                Learn With <span>Bongani</span>
+                Learn from wherever
+                <span>you are.</span>
             </h2>
 
             <p>
-                Online lessons, educational content and direct communication.
+                Online support makes it easier to attend lessons without
+                travelling to a physical tutoring centre.
             </p>
 
         </div>
 
 
-        <div class="platform-grid">
-
+        <div class="resource-grid">
 
             <!-- Google Meet -->
 
-            <div class="platform-card google-card">
+            <div class="resource-card meet-card">
 
                 <div class="platform-logo google-meet-logo">
-                    <div class="meet-camera">
-                        ▶
-                    </div>
-                </div>
 
-                <div>
+                    <span class="meet-shape"></span>
 
-                    <h3>
-                        Google Meet
-                    </h3>
-
-                    <p>
-                        Attend your tutoring sessions online through Google Meet.
-                    </p>
-
-                    <!-- Replace # with your actual Google Meet link -->
-
-                    <a href="#booking" class="platform-button">
-                        Join / Book Google Meet
-                    </a>
+                    <span class="meet-text">
+                        MEET
+                    </span>
 
                 </div>
+
+                <h3>
+                    Google Meet Lessons
+                </h3>
+
+                <p>
+                    Online tutoring sessions can be conducted through
+                    Google Meet. After booking, session arrangements can
+                    be confirmed through WhatsApp.
+                </p>
+
+                <a href="#booking" class="resource-link">
+                    Book an Online Lesson →
+                </a>
 
             </div>
 
 
             <!-- YouTube -->
 
-            <div class="platform-card youtube-card">
+            <div class="resource-card youtube-card">
 
                 <div class="platform-logo youtube-logo">
-                    ▶
-                </div>
 
-                <div>
+                    <span class="youtube-play">
+                        ▶
+                    </span>
 
-                    <h3>
+                    <span class="youtube-text">
                         YouTube
-                    </h3>
-
-                    <p>
-                        Watch educational videos, explanations and tutoring content.
-                    </p>
-
-                    <!-- Replace # with your actual YouTube channel -->
-
-                    <a href="#"
-                       class="platform-button"
-                       id="youtubeLink">
-                        Visit YouTube Channel
-                    </a>
+                    </span>
 
                 </div>
+
+                <h3>
+                    Educational Resources
+                </h3>
+
+                <p>
+                    Follow BONGX031 for educational content, explanations,
+                    study guidance and additional learning resources.
+                </p>
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="resource-link"
+                >
+                    Visit YouTube →
+                </a>
 
             </div>
 
@@ -821,22 +822,23 @@
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      HOW IT WORKS
-========================================================= -->
+========================= -->
 
-<section class="section process-section" id="how">
+<section class="section process-section">
 
-    <div class="section-container">
+    <div class="container">
 
-        <div class="section-heading centered">
+        <div class="section-heading center">
 
-            <span class="section-tag">
+            <span class="section-label">
                 HOW IT WORKS
             </span>
 
             <h2>
-                Start Learning in <span>4 Steps</span>
+                Getting started is
+                <span>simple.</span>
             </h2>
 
         </div>
@@ -844,70 +846,69 @@
 
         <div class="process-grid">
 
+            <div class="process-step">
 
-            <div class="process-card">
-
-                <div class="process-number">
-                    01
+                <div class="step-number">
+                    1
                 </div>
 
                 <h3>
-                    Choose Your Subject
+                    Choose
                 </h3>
 
                 <p>
-                    Select Mathematics, Physics or Computer Science.
+                    Select your subject or service.
                 </p>
 
             </div>
 
 
-            <div class="process-card">
+            <div class="process-step">
 
-                <div class="process-number">
-                    02
+                <div class="step-number">
+                    2
                 </div>
 
                 <h3>
-                    Book a Session
+                    Book
                 </h3>
 
                 <p>
-                    Complete the booking form with your preferred details.
+                    Complete the booking form.
                 </p>
 
             </div>
 
 
-            <div class="process-card">
+            <div class="process-step">
 
-                <div class="process-number">
-                    03
+                <div class="step-number">
+                    3
                 </div>
 
                 <h3>
-                    Receive Confirmation
+                    Confirm
                 </h3>
 
                 <p>
-                    Your booking information will be sent through WhatsApp.
+                    Your request is sent to WhatsApp.
                 </p>
 
             </div>
 
 
-            <div class="process-card">
+            <div class="process-step">
 
-                <div class="process-number">
-                    04
+                <div class="step-number">
+                    4
                 </div>
 
                 <h3>
-                    Join Google Meet
+                    Learn
                 </h3>
 
                 <p>
-                    Attend your online tutoring session and start learning.
+                    Attend your online lesson and start improving.
                 </p>
 
             </div>
@@ -919,83 +920,239 @@
 </section>
 
 
-<!-- =========================================================
-     BOOKING
-========================================================= -->
+<!-- =========================
+     BURSARIES
+========================= -->
 
-<section class="section booking-section" id="booking">
+<section class="section bursary-section" id="bursaries">
 
-    <div class="section-container">
+    <div class="container">
 
-        <div class="booking-wrapper">
+        <div class="bursary-box">
 
+            <div class="bursary-content">
 
-            <div class="booking-info">
-
-                <span class="section-tag">
-                    BOOK A SESSION
+                <span class="section-label light">
+                    BURSARY APPLICATION SUPPORT
                 </span>
 
                 <h2>
-                    Ready to <span>Improve?</span>
+                    Need help with your
+                    <span>bursary application?</span>
                 </h2>
 
                 <p>
-                    Complete the form and send your tutoring request directly
-                    through WhatsApp.
+                    BONGX031 provides structured support to help students
+                    understand bursary requirements, organise documents
+                    and prepare stronger applications.
                 </p>
 
-
-                <div class="booking-benefit">
-
-                    <span>✓</span>
-
-                    <div>
-                        <strong>Online Tutoring</strong>
-
-                        <p>
-                            Lessons are conducted online through Google Meet.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="booking-benefit">
-
-                    <span>✓</span>
-
-                    <div>
-                        <strong>Flexible Support</strong>
-
-                        <p>
-                            Choose the subject and area where you need help.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="booking-benefit">
-
-                    <span>✓</span>
-
-                    <div>
-                        <strong>Direct Communication</strong>
-
-                        <p>
-                            Booking information is sent directly to WhatsApp.
-                        </p>
-                    </div>
-
-                </div>
+                <a href="#booking" class="btn btn-white">
+                    Get Bursary Assistance
+                </a>
 
             </div>
 
 
-            <!-- BOOKING FORM -->
+            <div class="bursary-services">
 
-            <form id="bookingForm" class="booking-form">
+                <div>
+                    <strong>01</strong>
+                    <h3>Find Opportunities</h3>
+                    <p>Identify bursary opportunities relevant to your studies.</p>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <h3>Prepare Documents</h3>
+                    <p>Work through the documents required for an application.</p>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <h3>Application Guidance</h3>
+                    <p>Understand the application process and requirements.</p>
+                </div>
+
+                <div>
+                    <strong>04</strong>
+                    <h3>Review</h3>
+                    <p>Check your application before submission.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="bursary-note">
+            <strong>Important:</strong> BONGX031 provides application support
+            and guidance. Bursary approval is determined by the relevant
+            funding organisation.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="section faq-section" id="faq">
+
+    <div class="container faq-container">
+
+        <div class="section-heading center">
+
+            <span class="section-label">
+                FAQ
+            </span>
+
+            <h2>
+                Frequently asked
+                <span>questions.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+            <details>
+                <summary>
+                    Do you offer online tutoring?
+                    <span>+</span>
+                </summary>
+
+                <p>
+                    Yes. Tutoring is provided online, with Google Meet
+                    available for lessons.
+                </p>
+
+            </details>
+
+
+            <details>
+                <summary>
+                    Which school grades do you teach?
+                    <span>+</span>
+                </summary>
+
+                <p>
+                    BONGX031 provides support for Grade 11 and Grade 12
+                    Mathematics and Physics.
+                </p>
+
+            </details>
+
+
+            <details>
+                <summary>
+                    Do you offer university tutoring?
+                    <span>+</span>
+                </summary>
+
+                <p>
+                    Yes. University Mathematics and Computer Science
+                    academic support are available.
+                </p>
+
+            </details>
+
+
+            <details>
+                <summary>
+                    How much does school tutoring cost?
+                    <span>+</span>
+                </summary>
+
+                <p>
+                    The advertised school tutoring package is R130 per month.
+                </p>
+
+            </details>
+
+
+            <details>
+                <summary>
+                    How do I book a lesson?
+                    <span>+</span>
+                </summary>
+
+                <p>
+                    Complete the booking form below. Your booking information
+                    will be prepared and sent to WhatsApp for confirmation.
+                </p>
+
+            </details>
+
+
+            <details>
+                <summary>
+                    Do you guarantee bursary approval?
+                    <span>+</span>
+                </summary>
+
+                <p>
+                    No. BONGX031 provides application support and guidance.
+                    The final decision belongs to the relevant bursary
+                    organisation.
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOKING
+========================= -->
+
+<section class="section booking-section" id="booking">
+
+    <div class="container booking-grid">
+
+        <div class="booking-intro">
+
+            <span class="section-label">
+                START HERE
+            </span>
+
+            <h2>
+                Ready to
+                <span>start learning?</span>
+            </h2>
+
+            <p>
+                Complete the form and your booking request will be prepared
+                for WhatsApp. You can then confirm the details directly.
+            </p>
+
+            <div class="contact-mini">
+
+                <a href="tel:+27786701301">
+                    <strong>Phone</strong>
+                    078 670 1301
+                </a>
+
+                <a href="mailto:bonganinkhensani@gmail.com">
+                    <strong>Email</strong>
+                    bonganinkhensani@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="booking-card">
+
+            <form id="bookingForm">
 
                 <div class="form-row">
 
@@ -1025,19 +1182,23 @@
                         <select id="level" name="level" required>
 
                             <option value="">
-                                Select your level
+                                Select level
                             </option>
 
-                            <option value="Grade 11">
+                            <option>
                                 Grade 11
                             </option>
 
-                            <option value="Grade 12">
+                            <option>
                                 Grade 12
                             </option>
 
-                            <option value="University">
+                            <option>
                                 University
+                            </option>
+
+                            <option>
+                                Other
                             </option>
 
                         </select>
@@ -1052,25 +1213,41 @@
                     <div class="form-group">
 
                         <label for="subject">
-                            Subject
+                            Subject / Service
                         </label>
 
                         <select id="subject" name="subject" required>
 
                             <option value="">
-                                Select a subject
+                                Select subject
                             </option>
 
-                            <option value="Mathematics">
-                                Mathematics
+                            <option>
+                                Grade 11 Mathematics
                             </option>
 
-                            <option value="Physics">
-                                Physics
+                            <option>
+                                Grade 12 Mathematics
                             </option>
 
-                            <option value="Computer Science">
+                            <option>
+                                Grade 11 Physics
+                            </option>
+
+                            <option>
+                                Grade 12 Physics
+                            </option>
+
+                            <option>
+                                University Mathematics
+                            </option>
+
+                            <option>
                                 Computer Science
+                            </option>
+
+                            <option>
+                                Bursary Application Assistance
                             </option>
 
                         </select>
@@ -1080,16 +1257,15 @@
 
                     <div class="form-group">
 
-                        <label for="module">
+                        <label for="topic">
                             Topic / Module
                         </label>
 
                         <input
                             type="text"
-                            id="module"
-                            name="module"
-                            placeholder="e.g. Calculus"
-                            required
+                            id="topic"
+                            name="topic"
+                            placeholder="e.g. Algebra / Linear Algebra"
                         >
 
                     </div>
@@ -1117,27 +1293,22 @@
 
                     <div class="form-group">
 
-                        <label for="session">
+                        <label for="time">
                             Preferred Time
                         </label>
 
-                        <select id="session" name="session" required>
+                        <select id="time" name="time" required>
 
                             <option value="">
-                                Select a time
+                                Select time
                             </option>
 
-                            <option value="Morning">
-                                Morning
-                            </option>
-
-                            <option value="Afternoon">
-                                Afternoon
-                            </option>
-
-                            <option value="Evening">
-                                Evening
-                            </option>
+                            <option>08:00 - 10:00</option>
+                            <option>10:00 - 12:00</option>
+                            <option>12:00 - 14:00</option>
+                            <option>14:00 - 16:00</option>
+                            <option>16:00 - 18:00</option>
+                            <option>18:00 - 20:00</option>
 
                         </select>
 
@@ -1155,7 +1326,7 @@
                     <textarea
                         id="message"
                         name="message"
-                        rows="5"
+                        rows="4"
                         placeholder="Tell me what you need help with..."
                     ></textarea>
 
@@ -1164,18 +1335,15 @@
 
                 <button
                     type="submit"
-                    class="submit-button"
-                    id="submitButton">
-
+                    class="btn btn-primary full-width booking-button"
+                >
                     Send Booking Request on WhatsApp
-
                 </button>
 
-
-                <div
-                    id="formMessage"
-                    class="form-message">
-                </div>
+                <p class="form-note">
+                    Your request will open WhatsApp with your booking
+                    information already prepared.
+                </p>
 
             </form>
 
@@ -1186,148 +1354,80 @@
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      CONTACT
-========================================================= -->
+========================= -->
 
-<section class="section contact-section" id="contact">
+<section class="contact-section" id="contact">
 
-    <div class="section-container">
+    <div class="container contact-grid">
 
-        <div class="section-heading centered">
+        <div>
 
-            <span class="section-tag">
-                CONTACT BONGANI
+            <span class="section-label light">
+                CONTACT BONGX031
             </span>
 
             <h2>
-                Let's Start <span>Learning</span>
+                Let's work on your
+                <span>academic goals.</span>
             </h2>
 
             <p>
-                Have a question? Contact Bongani directly.
+                Contact BONGX031 for tutoring, academic support or
+                bursary application assistance.
             </p>
 
         </div>
 
 
-        <div class="contact-grid">
+        <div class="contact-links">
 
+            <a href="tel:+27786701301" class="contact-item">
 
-            <!-- WhatsApp -->
-
-            <a
-                href="https://wa.me/27786701301"
-                class="contact-card"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                <div class="contact-icon whatsapp-icon">
-                    W
-                </div>
+                <span class="contact-icon">
+                    ☎
+                </span>
 
                 <div>
-
-                    <h3>
-                        WhatsApp
-                    </h3>
-
-                    <p>
-                        Chat directly about tutoring, bookings and availability.
-                    </p>
-
-                    <span>
-                        078 670 1301 →
-                    </span>
-
+                    <small>CALL / WHATSAPP</small>
+                    <strong>078 670 1301</strong>
                 </div>
 
             </a>
 
-
-            <!-- Email -->
 
             <a
                 href="mailto:bonganinkhensani@gmail.com"
-                class="contact-card">
+                class="contact-item"
+            >
 
-                <div class="contact-icon email-icon">
-                    @
-                </div>
+                <span class="contact-icon">
+                    ✉
+                </span>
 
                 <div>
-
-                    <h3>
-                        Email
-                    </h3>
-
-                    <p>
-                        Send an academic enquiry or tutoring question.
-                    </p>
-
-                    <span>
-                        bonganinkhensani@gmail.com →
-                    </span>
-
+                    <small>EMAIL</small>
+                    <strong>bonganinkhensani@gmail.com</strong>
                 </div>
 
             </a>
 
 
-            <!-- Google Meet -->
-
             <a
-                href="#booking"
-                class="contact-card">
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener"
+                class="contact-item"
+            >
 
-                <div class="contact-icon meet-icon">
+                <span class="contact-icon youtube-mini">
                     ▶
-                </div>
+                </span>
 
                 <div>
-
-                    <h3>
-                        Google Meet
-                    </h3>
-
-                    <p>
-                        Tutoring sessions are conducted online through Google Meet.
-                    </p>
-
-                    <span>
-                        Book an online lesson →
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <!-- YouTube -->
-
-            <a
-                href="#"
-                class="contact-card"
-                id="youtubeContactLink">
-
-                <div class="contact-icon youtube-icon">
-                    ▶
-                </div>
-
-                <div>
-
-                    <h3>
-                        YouTube
-                    </h3>
-
-                    <p>
-                        Follow educational content and tutoring videos.
-                    </p>
-
-                    <span>
-                        Visit YouTube →
-                    </span>
-
+                    <small>YOUTUBE</small>
+                    <strong>BONGX031 Resources</strong>
                 </div>
 
             </a>
@@ -1341,19 +1441,18 @@
 </main>
 
 
-<!-- =========================================================
+<!-- =========================
      FOOTER
-========================================================= -->
+========================= -->
 
 <footer class="footer">
 
-    <div class="footer-container">
+    <div class="container footer-grid">
 
-        <div class="footer-brand">
+        <div>
 
-            <a href="#home" class="logo footer-logo">
-                <span class="logo-main">BONGANI</span>
-                <span class="logo-sub">TUTORING</span>
+            <a href="#home" class="footer-logo">
+                BONGX031
             </a>
 
             <p>
@@ -1361,29 +1460,29 @@
             </p>
 
             <p>
-                Online tutoring through Google Meet.
+                Online academic support for students who want
+                to understand more and achieve more.
             </p>
 
         </div>
 
 
-        <div class="footer-links">
+        <div>
 
             <h3>
                 Quick Links
             </h3>
 
-            <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#subjects">Subjects</a>
+            <a href="#bursaries">Bursaries</a>
             <a href="#pricing">Pricing</a>
             <a href="#booking">Book</a>
-            <a href="#contact">Contact</a>
 
         </div>
 
 
-        <div class="footer-contact">
+        <div>
 
             <h3>
                 Contact
@@ -1397,8 +1496,8 @@
                 bonganinkhensani@gmail.com
             </a>
 
-            <a href="#booking">
-                Online via Google Meet
+            <a href="https://wa.me/27786701301" target="_blank">
+                WhatsApp
             </a>
 
         </div>
@@ -1408,31 +1507,34 @@
 
     <div class="footer-bottom">
 
-        <p>
-            © <span id="year"></span> Bongani Tutoring.
-            All rights reserved.
-        </p>
+        <div class="container">
 
-        <p>
-            Learn • Practise • Improve
-        </p>
+            <p>
+                © <span id="year"></span> BONGX031 Tutoring.
+                All rights reserved.
+            </p>
+
+            <p>
+                Built for learning. Designed for progress.
+            </p>
+
+        </div>
 
     </div>
 
 </footer>
 
 
-<!-- =========================================================
+<!-- =========================
      BACK TO TOP
-========================================================= -->
+========================= -->
 
 <button
-    class="back-to-top"
     id="backToTop"
-    aria-label="Back to top">
-
+    class="back-to-top"
+    aria-label="Back to top"
+>
     ↑
-
 </button>
 
 
